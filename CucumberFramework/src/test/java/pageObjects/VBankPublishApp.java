@@ -1,17 +1,24 @@
 package pageObjects;
 
+import java.time.Duration;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class VBankPublishApp {
 
 	public WebDriver driver;
+	public WebDriverWait wait;
 
 	public VBankPublishApp(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+		this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 	}
 
 	@FindBy(css = "input[placeholder='Enter Release Name']")
@@ -31,7 +38,7 @@ public class VBankPublishApp {
 
 	public void publish_Release_Name(String releaseName) {
 
-		publishReleaseName.sendKeys(releaseName);
+		wait.until(ExpectedConditions.visibilityOf(publishReleaseName)).sendKeys(releaseName);
 	}
 
 	public void publish_Comment(String comment) {
@@ -45,10 +52,12 @@ public class VBankPublishApp {
 
 	public void yes_Publish() {
 
-		yesPublish.click();
+		wait.until(ExpectedConditions.elementToBeClickable(yesPublish)).click();
 	}
 
 	public String success_Msg() {
+		wait.until(ExpectedConditions.visibilityOf(successMsg));
 		return successMsg.getText();
 	}
+
 }

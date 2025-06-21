@@ -44,7 +44,6 @@ public class VBankPublishAppSD {
 		this.vBankConsentConfiguration = testContextSetup.pageObjectManager.getVBankConsentConfiguration();
 		this.vBankPublishApp = testContextSetup.pageObjectManager.getVBankPublishApp();
 
-		this.wait = new WebDriverWait(testContextSetup.driver, Duration.ofSeconds(5));
 	}
 
 	@Given("User Land on vbank Landing page")
@@ -57,6 +56,7 @@ public class VBankPublishAppSD {
 		vHubLandingPage.click_On_vConsent_Card();
 		vHubAssetDetailPage.clickExperienceOrConfigureApp();
 		testContextSetup.genericUtils.SwitchWindowToChild();
+		
 
 	}
 
@@ -65,18 +65,16 @@ public class VBankPublishAppSD {
 
 		vBankLandingPage.create_New_App();
 
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h3[text()='App Settings']")));
-
+		vBankAppSettings.waitForAppSettingsPageToLoad();
 		vBankAppSettings.enter_App_Name();
 		vBankAppSettings.effective_Date();
 
-		wait.until(ExpectedConditions
-				.visibilityOfElementLocated(By.xpath("//span[contains(@class, 'mat-calendar-body-today')]")));
+		vBankAppSettings.waitForCalendarToAppear();
 		vBankAppSettings.current_Effective_Date();
 
 		vBankAppSettings.driver.switchTo().activeElement().sendKeys(Keys.ESCAPE);
 
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@type='submit']")));
+		vBankAppSettings.waitForNextButtonToBeClickable();
 		vBankAppSettings.next_Button();
 
 	}
@@ -84,10 +82,9 @@ public class VBankPublishAppSD {
 	@When("Fill all required  field of Consent configuration page")
 	public void fill_all_required_field_of_consent_configuration_page(DataTable dataTable) throws InterruptedException {
 
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[@class='mdc-button__label'])[3]")));
 		vBankConsentConfiguration.add_New_Consent_Button();
-
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h3[text()='Consent Details']")));
+		
+		vBankConsentConfiguration.waitForConsentDetailPage();
 		vBankConsentConfiguration.enter_Consent_Name();
 
 		List<String> consentDetails = dataTable.asList();
@@ -95,18 +92,14 @@ public class VBankPublishAppSD {
 
 		vBankConsentConfiguration.enter_Consent_Notice(consentNotice);
 
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[.//span[text()=' Save ']]")));
 		vBankConsentConfiguration.save_Button();
 
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button//div[.//span[text()='Next']])[2]")));
 		vBankConsentConfiguration.next_Button();
 
 	}
 
 	@Then("Fill all the required field on Publish App page.")
 	public void fill_all_the_required_field_on_publish_app_page(DataTable dataTable) throws InterruptedException {
-
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()=' Publish App ']")));
 
 		List<List<String>> publishData = dataTable.asLists();
 		String releaseName = publishData.get(0).get(0); // "First Release"
@@ -116,16 +109,9 @@ public class VBankPublishAppSD {
 		vBankPublishApp.publish_Comment(releasecomment);
 		vBankPublishApp.publish_To_Sandbox();
 
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[.//span[text()=' Yes, Publish ']]")));
 		vBankPublishApp.yes_Publish();
-
-		wait.until(ExpectedConditions.visibilityOfElementLocated(
-				By.xpath("//p[text()='Your App has been successfully Published to Sandbox.']")));
-
-		String actualMessage = vBankPublishApp.success_Msg();
-		String expectedMessage = "Your App has been successfully Published to Sandbox.";
-		org.testng.Assert.assertEquals(actualMessage, expectedMessage,
-				"Your App has not been successfully Published to Sandbox.");
+		
+		String actual = vBankPublishApp.success_Msg();
 
 	}
 

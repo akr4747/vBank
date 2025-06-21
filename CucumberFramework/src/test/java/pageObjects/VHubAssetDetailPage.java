@@ -15,12 +15,17 @@ import io.netty.handler.timeout.TimeoutException;
 public class VHubAssetDetailPage {
 
 	public WebDriver driver;
+	public WebDriverWait wait;
 
 	public VHubAssetDetailPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 	}
 
+	@FindBy(xpath="//h2[text()='vConsent']")
+	private WebElement asset_Name;
+	
 	@FindBy(xpath = "(//span[text()='Experience For Free'])[1]")
 	private WebElement exprience_For_Free;
 
@@ -28,8 +33,7 @@ public class VHubAssetDetailPage {
 	private WebElement configureApp;
 
 	public void clickExperienceOrConfigureApp() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-
+		
 		try {
 			// Check if "Experience For Free" button is present and visible
 			WebElement experienceButton = wait.until(ExpectedConditions
@@ -76,5 +80,15 @@ public class VHubAssetDetailPage {
 	 * wait.until(ExpectedConditions.elementToBeClickable(configureBtnLocator));
 	 * configureAppButton.click(); }
 	 */
+
+	public boolean isSearchResultDisplayed() {
+		try {
+			WebElement result = wait.until(ExpectedConditions.visibilityOf(asset_Name));
+			return result.isDisplayed();
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
 
 }

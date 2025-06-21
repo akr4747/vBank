@@ -1,19 +1,25 @@
 package pageObjects;
 
+import java.time.Duration;
+
 import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class VBankConsentConfiguration {
 
 	public WebDriver driver;
+	public WebDriverWait wait;
 
 	public VBankConsentConfiguration(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+		this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 	}
 
 	@FindBy(xpath = "(//span[@class='mdc-button__label'])[3]")
@@ -31,7 +37,7 @@ public class VBankConsentConfiguration {
 	private WebElement nextButton;
 
 	public void add_New_Consent_Button() {
-		addNewConsentButton.click();
+		wait.until(ExpectedConditions.elementToBeClickable(addNewConsentButton)).click();
 	}
 
 	public void enter_Consent_Name() {
@@ -46,11 +52,15 @@ public class VBankConsentConfiguration {
 	}
 
 	public void save_Button() {
-		saveButton.click();
+		wait.until(ExpectedConditions.elementToBeClickable(saveButton)).click();
 	}
 
 	public void next_Button() {
-		nextButton.click();
+		wait.until(ExpectedConditions.elementToBeClickable(nextButton)).click();
+	}
+	
+	public void waitForConsentDetailPage() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h3[text()='Consent Details']")));
 	}
 
 	// Utility

@@ -15,10 +15,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class VHubLandingPage {
 
 	public WebDriver driver;
+	public WebDriverWait wait;
 
 	public VHubLandingPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
+		this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 	}
 
 	@FindBy(xpath = "//button[.//span[contains(text(), 'Login')]]")
@@ -38,7 +40,7 @@ public class VHubLandingPage {
 
 	@FindBy(xpath = "//input[@type='search']")
 	private WebElement searchBox;
-
+	
 	@FindBy(xpath = "//div[@title='vConsent']")
 	private WebElement clickOnvConsentCard;
 
@@ -100,14 +102,24 @@ public class VHubLandingPage {
 	public void sendEscapeKeyToSearchBox() {
 		searchBox.sendKeys(Keys.ESCAPE);
 	}
-
+	
 	public void click_On_vConsent_Card() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-		WebElement clickableCard = wait
-				.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@title='vConsent']")));
-		clickableCard.click();
+		
+//		wait.until(ExpectedConditions.elementToBeClickable(clickOnvConsentCard)).click();
+		WebElement clickOnCard = wait.until(ExpectedConditions.elementToBeClickable(clickOnvConsentCard));
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", clickOnCard);
+	}
+	
+	public boolean isSearchBoxVisible() {
+		try {
+			wait.until(ExpectedConditions.visibilityOf(search_text_box));
+			return search_text_box.isDisplayed();
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
+	
 	// --------- Explore Use Case Section ---------
 
 	public void exploreUseCases() {
@@ -124,15 +136,23 @@ public class VHubLandingPage {
 		// If text includes "Sort By", extract only "Top Use Cases"
 		return fullText.split("Sort By")[0].trim();
 	}
+	
+	public void waitForExploreUseCasesVisible() {
+	    wait.until(ExpectedConditions.visibilityOf(explore_Use_Case));
+	}
+
+	public void waitForTopUseCasesVisible() {
+	    wait.until(ExpectedConditions.visibilityOf(title_Top_Use_Cases));
+	}
 
 	// --------- Navigation Links ---------
 
 	public void hambergenIcon() {
-		hambergen_Icon.click();
+		wait.until(ExpectedConditions.elementToBeClickable(hambergen_Icon)).click();
 	}
 
 	public void developerConsole() {
-		developer_Console.click();
+		wait.until(ExpectedConditions.elementToBeClickable(developer_Console)).click();
 	}
 
 	public void questionMark() {
@@ -146,5 +166,28 @@ public class VHubLandingPage {
 	public void vahanaCommunity() {
 		vahana_Community.click();
 	}
+	
+
+	public void waitForQuestionMark() {
+		WebElement nextButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@alt='question']")));
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", nextButton);
+
+	}
+
+	public void waitForVahanaAccountPageHeader() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[text()='Get Started with Vahana']")));
+	}
+
+	public void clickQuestionMarkAndOpenDocumentation() {
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", question_Mark);
+		wait.until(ExpectedConditions.elementToBeClickable(documentation_Link)).click();
+	}
+
+	public void clickQuestionMarkAndOpenCommunity() {
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", question_Mark);
+		wait.until(ExpectedConditions.elementToBeClickable(vahana_Community)).click();
+	}
+	
+
 
 }

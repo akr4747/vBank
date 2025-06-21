@@ -12,6 +12,7 @@ import org.testng.Assert;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pageObjects.VHubAssetDetailPage;
 import pageObjects.VHubLandingPage;
 import utils.TestContextSetup;
 
@@ -19,20 +20,21 @@ public class VHubLandingPageSD {
 
 	TestContextSetup testContextSetup;
 	VHubLandingPage vHubLandingPage;
+	VHubAssetDetailPage vHubAssetDetailPage;
 	WebDriverWait wait;
 
 	public VHubLandingPageSD(TestContextSetup testContextSetup) {
 		this.testContextSetup = testContextSetup;
 		this.vHubLandingPage = testContextSetup.pageObjectManager.getVHubLandingPage();
-		this.wait = new WebDriverWait(vHubLandingPage.driver, Duration.ofSeconds(3));
+		this.vHubAssetDetailPage = testContextSetup.pageObjectManager.getVHubAssetDetailPage();
+		this.wait = new WebDriverWait(vHubLandingPage.driver, Duration.ofSeconds(5));
 	}
 
 	@Given("User is on vHub Landing Page")
 	public void user_is_on_v_hub_landing_page() throws InterruptedException {
 
-		WebElement searchBox = wait
-				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type='search']")));
-		Assert.assertTrue(searchBox.isDisplayed(), "Search box is not visible on the vHub Landing Page.");
+		
+		Assert.assertTrue(vHubLandingPage.isSearchBoxVisible(), "Search box is not visible on the vHub Landing Page.");
 		vHubLandingPage.searchTextBox();
 	}
 
@@ -41,15 +43,17 @@ public class VHubLandingPageSD {
 
 		vHubLandingPage.enterAssetNameOnSearchBox(assetTypeApp);
 		vHubLandingPage.hitEnter();
-		vHubLandingPage.driver.switchTo().activeElement().sendKeys(Keys.ESCAPE);
+		vHubLandingPage.sendEscapeKeyToSearchBox();
+		vHubLandingPage.click_On_vConsent_Card();
+		
 	}
 
 	@Then("Asset Type search successfully")
 	public void asset_type_search_successfully() {
 
-		WebElement searchResult = wait
-				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@title='vConsent']")));
-		Assert.assertTrue(searchResult.isDisplayed(), "The Asset Type 'vConsent' was not found in the search results.");
+		Assert.assertTrue(
+				vHubAssetDetailPage.isSearchResultDisplayed(),
+				"The Asset Type 'vConsent' was not found.");
 	}
 
 }

@@ -24,7 +24,6 @@ public class VBankRunTimeSD {
 	VHubLandingPage vHubLandingPage;
 	VBankLandingPage vBankLandingPage;
 	VHubAssetDetailPage vHubAssetDetailPage;
-	WebDriverWait wait;
 
 	
 	public VBankRunTimeSD(TestContextSetup testContextSetup) {
@@ -32,8 +31,6 @@ public class VBankRunTimeSD {
 		this.vHubAssetDetailPage = testContextSetup.pageObjectManager.getVHubAssetDetailPage();
 		this.vHubLandingPage = testContextSetup.pageObjectManager.getVHubLandingPage();
 		this.vBankLandingPage = testContextSetup.pageObjectManager.getVBankLandingPage();
-	
-		this.wait = new WebDriverWait(testContextSetup.driver, Duration.ofSeconds(5));
 		
 	}
 	
@@ -45,40 +42,29 @@ public class VBankRunTimeSD {
 		vHubLandingPage.hitEnter();
 		vHubLandingPage.sendEscapeKeyToSearchBox();
 		vHubLandingPage.click_On_vConsent_Card();
+		
 	}
 	@When("the user clicks on the Asset Details page")
-	public void the_user_clicks_on_the_asset_details_page(String assetTypeApp) {
+	public void the_user_clicks_on_the_asset_details_page() {
 	
-		vHubAssetDetailPage.clickExperienceOrConfigureApp();
-		
+		vHubAssetDetailPage.clickExperienceOrConfigureApp();	
 		testContextSetup.genericUtils.SwitchWindowToChild();
 
-		WebElement searchResult = wait
-				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='nav-title']")));
-		Assert.assertTrue(searchResult.isDisplayed(), "User not land on vBank Landing page");
-		
 	}
 	
 	@When("user on vBank Landing Page")
 	public void user_on_v_bank_landing_page() {
 	   
-
-		testContextSetup.genericUtils.SwitchWindowToChild();
-
-		WebElement searchResult = wait
-				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='nav-title']")));
-		Assert.assertTrue(searchResult.isDisplayed(), "User not land on vBank Landing page");
+		vBankLandingPage.verifyUserIsOnVBankLandingPage();
+	
 	}
 	
 	@Then("the system should redirect the user to the Runtime environment")
 	public void the_system_should_redirect_the_user_to_the_runtime_environment() {
+	
 		vBankLandingPage.clickViewInsights();
 		testContextSetup.genericUtils.SwitchWindowToChild();
-		
-		
-		String expectedURL = "https://decimal-vhub.vahanacloud.com/";
-		String actualURL = testContextSetup.driver.getCurrentUrl();
-		org.testng.Assert.assertEquals(actualURL, expectedURL, "Incorrect RunTime URL");
+		vBankLandingPage.verifyRuntimeUrl("https://decimal-vhub.vahanacloud.com/");
 		
 	}
 }
