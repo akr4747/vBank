@@ -8,10 +8,13 @@ import java.util.Iterator;
 import java.util.Properties;
 import java.util.Set;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import pageObjects.VHubLandingPage;
 
@@ -49,11 +52,13 @@ public class TestBase {
 		driver.get(url);	
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
 		VHubLandingPage vHub =new VHubLandingPage(driver);
 		String username = prop.getProperty("userName");
 		String password = prop.getProperty("password");
 		vHub.login_SignUp_Button();
-		Thread.sleep(3000);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("mat-input-1")));
 		vHub.enter_User_Email(username);
 		vHub.enter_User_Password(password);
 		vHub.click_Login_Button();

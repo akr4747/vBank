@@ -1,4 +1,4 @@
-Feature: Navigate to  vHub Landing page and search the Asset Type vConsent
+Feature: Verify navigate to vHub Landing page and search the Asset from search bar.
 @vHub
 Scenario: Verify Search Experience for Asset type App on home page
 
