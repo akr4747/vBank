@@ -41,8 +41,7 @@ public class VHubLandingPage {
 	@FindBy(xpath = "//input[@type='search']")
 	private WebElement searchBox;
 	
-	@FindBy(xpath = "//div[@title='vConsent']")
-	private WebElement clickOnvConsentCard;
+	By clickOnvConsentCard = By.xpath("//div[@title='vConsent']");
 
 	@FindBy(xpath = "//span[text()='Explore Use Cases']")
 	private WebElement explore_Use_Case;
@@ -56,7 +55,7 @@ public class VHubLandingPage {
 	@FindBy(xpath = "//div[@class='menu-container ng-tns-c1923052698-0']")
 	private WebElement developer_Console;
 
-	@FindBy(xpath = "//img[@alt='question']")
+	@FindBy(xpath = "//span[@class='mat-mdc-menu-trigger help-icon']")
 	private WebElement question_Mark;
 
 	@FindBy(xpath = "(//a[@rel='noopener noreferrer'])[1]")
@@ -105,10 +104,22 @@ public class VHubLandingPage {
 	
 	public void click_On_vConsent_Card() {
 		
-//		wait.until(ExpectedConditions.elementToBeClickable(clickOnvConsentCard)).click();
 		WebElement clickOnCard = wait.until(ExpectedConditions.elementToBeClickable(clickOnvConsentCard));
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", clickOnCard);
 	}
+	
+/*	public void click_On_vConsent_Card() {
+	    By consentCardLocator = By.xpath("//div[@title='vConsent']");
+	    for (int attempt = 0; attempt < 2; attempt++) {
+	        try {
+	            WebElement clickOnCard = wait.until(ExpectedConditions.elementToBeClickable(consentCardLocator));
+	            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", clickOnCard);
+	            break;
+	        } catch (StaleElementReferenceException e) {
+	            System.out.println("Stale element encountered. Retrying...");
+	        }
+	    }
+	} */
 	
 	public boolean isSearchBoxVisible() {
 		try {
@@ -169,8 +180,9 @@ public class VHubLandingPage {
 	
 
 	public void waitForQuestionMark() {
-		WebElement nextButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//img[@alt='question']")));
+		WebElement nextButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='mat-mdc-menu-trigger help-icon']")));
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", nextButton);
+		
 
 	}
 

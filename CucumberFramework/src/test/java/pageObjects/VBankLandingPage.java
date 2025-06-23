@@ -24,8 +24,8 @@ public class VBankLandingPage {
 	@FindBy(xpath = "//div[@class='add-new']")
 	private WebElement createNewApp;
 	
-	@FindBy(xpath= "(//span[@class='mdc-button__label'])[1]")
-	private  WebElement viewInsights;
+	@FindBy(xpath= "//span[@class='mdc-button__label']/span")
+	private  WebElement accessAppConsole;
 	
 	@FindBy(xpath = "//div[@class='nav-title']")
 	private WebElement navTitle;
@@ -35,7 +35,7 @@ public class VBankLandingPage {
 	}
 	
 	public void clickViewInsights() {
-		 viewInsights.click();
+		accessAppConsole.click();
 	}
 	
 	 public void verifyUserIsOnVBankLandingPage() {

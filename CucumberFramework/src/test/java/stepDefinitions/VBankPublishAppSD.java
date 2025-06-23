@@ -84,7 +84,6 @@ public class VBankPublishAppSD {
 
 		vBankConsentConfiguration.add_New_Consent_Button();
 		
-		vBankConsentConfiguration.waitForConsentDetailPage();
 		vBankConsentConfiguration.enter_Consent_Name();
 
 		List<String> consentDetails = dataTable.asList();

@@ -45,10 +45,9 @@ public class TestBase {
 			}
 			if(browser.equalsIgnoreCase("firefox"))
 			{
-		//		System.setProperty("webdriver.gecko.driver","//src//test//resources//geckodriver 5");
-		//		driver = new FirefoxDriver();
+				System.setProperty("webdriver.gecko.driver",System.getProperty("user.dir")+"//src//test//resources//geckodriver");
+				driver = new FirefoxDriver();
 			}
-		
 		driver.get(url);	
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();

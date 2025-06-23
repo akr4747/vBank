@@ -20,5 +20,14 @@ public class GenericUtils {
 		driver.switchTo().window(childWindow);
 	}
 
+	public void SwitchWindowToChildToChild() {
+		Set<String> s1 = driver.getWindowHandles();
+		Iterator<String> i1 = s1.iterator();
+		String parentWindow = i1.next();
+		String childWindow = i1.next();
+		driver.switchTo().window(childWindow);
+		String childToChildWindow = i1.next();
+		driver.switchTo().window(childToChildWindow);
+	}
 
 }

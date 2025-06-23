@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>6/2/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>7/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Jun 22 00:14:36 IST 2025</td>
+<td>Started on:</td><td>Mon Jun 23 23:22:50 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>80 seconds (80038 ms)</td>
+<tr><td>Total time:</td><td>87 seconds (87568 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,7 +76,7 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Successfully navigate to the Runtime environment after login", "Optional[Verify navigation from Control Plane to Runtime Environment]"</td>
-<td><div><pre>java.lang.AssertionError: Incorrect Runtime URL expected [https://decimal-vhub.vahanacloud.com/] but found [https://vhub.vahanacloud.com/cp/consents#overview]
+<td><div><pre>java.lang.AssertionError: Incorrect Runtime URL expected [https://decimal-vhub.vahanacloud.xyz] but found [https://decimal-vhub.vahanacloud.xyz/]
 	at org.testng.Assert.fail(Assert.java:99)
 	at org.testng.Assert.failNotEquals(Assert.java:1037)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
@@ -85,8 +85,8 @@ function toggleAllBoxes() {
 	at pageObjects.VBankLandingPage.verifyRuntimeUrl(VBankLandingPage.java:50)
 	at stepDefinitions.VBankRunTimeSD.the_system_should_redirect_the_user_to_the_runtime_environment(VBankRunTimeSD.java:67)
 	at ✽.the system should redirect the user to the Runtime environment(file:///C:/Users/Akshay%20rajput/Downloads/CucumberFramework/CucumberFramework/src/test/java/features/VBankRunTime.feature:8)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1155337528", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1155337528'><pre>java.lang.AssertionError: Incorrect Runtime URL expected [https://decimal-vhub.vahanacloud.com/] but found [https://vhub.vahanacloud.com/cp/consents#overview]
+</pre></div><a href='#' onClick='toggleBox("stack-trace381118552", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace381118552'><pre>java.lang.AssertionError: Incorrect Runtime URL expected [https://decimal-vhub.vahanacloud.xyz] but found [https://decimal-vhub.vahanacloud.xyz/]
 	at org.testng.Assert.fail(Assert.java:99)
 	at org.testng.Assert.failNotEquals(Assert.java:1037)
 	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
@@ -96,63 +96,7 @@ function toggleAllBoxes() {
 	at stepDefinitions.VBankRunTimeSD.the_system_should_redirect_the_user_to_the_runtime_environment(VBankRunTimeSD.java:67)
 	at ✽.the system should redirect the user to the Runtime environment(file:///C:/Users/Akshay%20rajput/Downloads/CucumberFramework/CucumberFramework/src/test/java/features/VBankRunTime.feature:8)
 </pre></div></td>
-<td>16</td>
-<td>cucumberOptions.TestNGTestRunner@618b19ad</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Veirfy Successfully navigate to vBank Landing Page after login", "Optional[Verify navigate to vBank Landing Page successfully.]"</td>
-<td><div><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
-  (Session info: chrome=137.0.7151.69)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
-Build info: version: &apos;4.1.1&apos;, revision: &apos;e8fcc2cecf&apos;
-System info: host: &apos;DEC1128&apos;, ip: &apos;192.168.169.207&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.14&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [69b9af95fcf3e814e1d2119acc984f97, executeScript {script=arguments[0].click();, args=[{ELEMENT=f.EEA2C497F5BA66B24649E069D2C868D0.d.2EFE00D70D75E70A97C8083196238005.e.115, element-6066-11e4-a52e-4f735466cecf=f.EEA2C497F5BA66B24649E069D2C868D0.d.2EFE00D70D75E70A97C8083196238005.e.115}]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.69, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\AKSHAY~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55738}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55738/devtoo..., se:cdpVersion: 137.0.7151.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 69b9af95fcf3e814e1d2119acc984f97
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:477)
-	at pageObjects.VHubLandingPage.click_On_vConsent_Card(VHubLandingPage.java:110)
-	at stepDefinitions.VBankLandingPageSD.the_user_has_successfully_logged_in_and_is_on_the_v_hub_home_page(VBankLandingPageSD.java:43)
-	at ✽.the user has successfully logged in and is on the vHub home page(file:///C:/Users/Akshay%20rajput/Downloads/CucumberFramework/CucumberFramework/src/test/java/features/VBankLandingPage.feature:5)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1958242673", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1958242673'><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
-  (Session info: chrome=137.0.7151.69)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
-Build info: version: &apos;4.1.1&apos;, revision: &apos;e8fcc2cecf&apos;
-System info: host: &apos;DEC1128&apos;, ip: &apos;192.168.169.207&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.14&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [69b9af95fcf3e814e1d2119acc984f97, executeScript {script=arguments[0].click();, args=[{ELEMENT=f.EEA2C497F5BA66B24649E069D2C868D0.d.2EFE00D70D75E70A97C8083196238005.e.115, element-6066-11e4-a52e-4f735466cecf=f.EEA2C497F5BA66B24649E069D2C868D0.d.2EFE00D70D75E70A97C8083196238005.e.115}]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.69, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\AKSHAY~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55738}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55738/devtoo..., se:cdpVersion: 137.0.7151.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 69b9af95fcf3e814e1d2119acc984f97
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:477)
-	at pageObjects.VHubLandingPage.click_On_vConsent_Card(VHubLandingPage.java:110)
-	at stepDefinitions.VBankLandingPageSD.the_user_has_successfully_logged_in_and_is_on_the_v_hub_home_page(VBankLandingPageSD.java:43)
-	at ✽.the user has successfully logged in and is on the vHub home page(file:///C:/Users/Akshay%20rajput/Downloads/CucumberFramework/CucumberFramework/src/test/java/features/VBankLandingPage.feature:5)
-</pre></div></td>
-<td>6</td>
+<td>18</td>
 <td>cucumberOptions.TestNGTestRunner@618b19ad</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
@@ -163,24 +107,9 @@ Session ID: 69b9af95fcf3e814e1d2119acc984f97
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Developer Console link opens the Vahana Account page.", "Optional[Verify vHub Header Navigation Links]"</td>
-<td></td>
-<td>7</td>
-<td>cucumberOptions.TestNGTestRunner@618b19ad</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Documentation link opens the Vahana Academy page.", "Optional[Verify vHub Header Navigation Links]"</td>
-<td></td>
-<td>5</td>
-<td>cucumberOptions.TestNGTestRunner@618b19ad</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Vahana Community link opens the Community page.", "Optional[Verify vHub Header Navigation Links]"</td>
-<td></td>
-<td>8</td>
-<td>cucumberOptions.TestNGTestRunner@618b19ad</td></tr>
-<tr>
 <td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Search Experience for Asset type App on home page", "Optional[Verify navigate to vHub Landing page and search the Asset from search bar.]"</td>
 <td></td>
-<td>6</td>
+<td>5</td>
 <td>cucumberOptions.TestNGTestRunner@618b19ad</td></tr>
 <tr>
 <td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Fill all required fields and publish the app to Sandbox.", "Optional[Verify Publish app to Sandbox successfully.]"</td>
@@ -189,6 +118,26 @@ Session ID: 69b9af95fcf3e814e1d2119acc984f97
 <td>cucumberOptions.TestNGTestRunner@618b19ad</td></tr>
 <tr>
 <td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Navigate to Top Use Cases from the banner image.", "Optional[Verify Explore Top Use Cases from Banner.]"</td>
+<td></td>
+<td>4</td>
+<td>cucumberOptions.TestNGTestRunner@618b19ad</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Developer Console link opens the Vahana Account page.", "Optional[Verify vHub Header Navigation Links]"</td>
+<td></td>
+<td>5</td>
+<td>cucumberOptions.TestNGTestRunner@618b19ad</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Documentation link opens the Vahana Academy page.", "Optional[Verify vHub Header Navigation Links]"</td>
+<td></td>
+<td>5</td>
+<td>cucumberOptions.TestNGTestRunner@618b19ad</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Veirfy Successfully navigate to vBank Landing Page after login", "Optional[Verify navigate to vBank Landing Page successfully.]"</td>
+<td></td>
+<td>17</td>
+<td>cucumberOptions.TestNGTestRunner@618b19ad</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify Vahana Community link opens the Community page.", "Optional[Verify vHub Header Navigation Links]"</td>
 <td></td>
 <td>6</td>
 <td>cucumberOptions.TestNGTestRunner@618b19ad</td></tr>

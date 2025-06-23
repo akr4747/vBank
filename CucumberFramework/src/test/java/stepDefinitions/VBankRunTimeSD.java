@@ -63,8 +63,8 @@ public class VBankRunTimeSD {
 	public void the_system_should_redirect_the_user_to_the_runtime_environment() {
 	
 		vBankLandingPage.clickViewInsights();
-		testContextSetup.genericUtils.SwitchWindowToChild();
-		vBankLandingPage.verifyRuntimeUrl("https://decimal-vhub.vahanacloud.com/");
+		testContextSetup.genericUtils.SwitchWindowToChildToChild();
+		vBankLandingPage.verifyRuntimeUrl("https://decimal-vhub.vahanacloud.xyz/");
 		
 	}
 }

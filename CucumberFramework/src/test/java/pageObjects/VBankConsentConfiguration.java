@@ -42,7 +42,7 @@ public class VBankConsentConfiguration {
 
 	public void enter_Consent_Name() {
 //		enterConsentName.sendKeys(consentName);
-
+		wait.until(ExpectedConditions.visibilityOfElementLocated(enterConsentName));
 		String apacheRandomString = generateApacheRandomString();
 		driver.findElement(enterConsentName).sendKeys(apacheRandomString);
 	}
@@ -57,10 +57,6 @@ public class VBankConsentConfiguration {
 
 	public void next_Button() {
 		wait.until(ExpectedConditions.elementToBeClickable(nextButton)).click();
-	}
-	
-	public void waitForConsentDetailPage() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h3[text()='Consent Details']")));
 	}
 
 	// Utility
