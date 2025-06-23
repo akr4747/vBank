@@ -26,6 +26,15 @@ public class VBankConsentConfiguration {
 	private WebElement addNewConsentButton;
 
 	By enterConsentName = By.cssSelector("input[placeholder='Enter Consent Name']");
+	
+	@FindBy(xpath="//textarea[@formcontrolname='description']")
+	private WebElement consent_Description;
+	
+	@FindBy(xpath="//input[@formcontrolname='audio']")
+	private  WebElement  consent_Audio;
+	
+	@FindBy(xpath="//input[@formcontrolname='video']")
+	private WebElement consent_Video;
 
 	@FindBy(xpath = "//div[@class='ql-editor ql-blank']")
 	private WebElement enterConsentNotice;
@@ -41,12 +50,23 @@ public class VBankConsentConfiguration {
 	}
 
 	public void enter_Consent_Name() {
-//		enterConsentName.sendKeys(consentName);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(enterConsentName));
 		String apacheRandomString = generateApacheRandomString();
 		driver.findElement(enterConsentName).sendKeys(apacheRandomString);
 	}
 
+	public void enterConsentDescription(String consentDescription) {
+		consent_Description.sendKeys(consentDescription);
+	}
+	
+	public void enterConsentAudio(String consentAudio) {
+		consent_Audio.sendKeys(consentAudio);
+	}
+	
+	public void enterConsentVideo(String consentVideo) {
+		consent_Video.sendKeys(consentVideo);
+	}
+	
 	public void enter_Consent_Notice(String consentNotice) {
 		enterConsentNotice.sendKeys(consentNotice);
 	}
@@ -58,6 +78,7 @@ public class VBankConsentConfiguration {
 	public void next_Button() {
 		wait.until(ExpectedConditions.elementToBeClickable(nextButton)).click();
 	}
+	
 
 	// Utility
 

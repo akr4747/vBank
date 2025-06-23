@@ -87,10 +87,20 @@ public class VBankPublishAppSD {
 		vBankConsentConfiguration.enter_Consent_Name();
 
 		List<String> consentDetails = dataTable.asList();
-		String consentNotice = consentDetails.get(0);
+		
+		String consentDescription=consentDetails.get(0);
+		String consentAudio=consentDetails.get(1);
+		String consentVideo=consentDetails.get(2);
+		String consentNotice = consentDetails.get(3);
+		
+		vBankConsentConfiguration.enterConsentDescription(consentDescription);
+		
+		vBankConsentConfiguration.enterConsentAudio(consentAudio);
+		
+		vBankConsentConfiguration.enterConsentVideo(consentVideo);
 
 		vBankConsentConfiguration.enter_Consent_Notice(consentNotice);
-
+		
 		vBankConsentConfiguration.save_Button();
 
 		vBankConsentConfiguration.next_Button();

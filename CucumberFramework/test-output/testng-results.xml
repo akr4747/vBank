@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="8" passed="7" failed="1" skipped="0">
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-23T23:22:50 IST" name="Default suite" finished-at="2025-06-23T23:24:17 IST" duration-ms="87568">
+  <suite started-at="2025-06-24T00:37:02 IST" name="Default suite" finished-at="2025-06-24T00:38:38 IST" duration-ms="95698">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-06-23T23:22:50 IST" name="Default test" finished-at="2025-06-23T23:24:17 IST" duration-ms="87568">
+    <test started-at="2025-06-24T00:37:02 IST" name="Default test" finished-at="2025-06-24T00:38:38 IST" duration-ms="95698">
       <class name="cucumberOptions.TestNGTestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-06-23T23:22:50 IST" name="setUpClass" finished-at="2025-06-23T23:22:51 IST" duration-ms="1529" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-06-24T00:37:02 IST" name="setUpClass" finished-at="2025-06-24T00:37:03 IST" duration-ms="1240" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@42cf5a6f]]>
+                <![CDATA[org.testng.TestRunner@5b0575d0]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-06-23T23:22:51 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-23T23:23:09 IST" duration-ms="17443" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-06-24T00:37:03 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-24T00:37:24 IST" duration-ms="20431" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -37,7 +37,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-06-23T23:23:09 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-23T23:23:31 IST" duration-ms="22363" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-06-24T00:37:24 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-24T00:37:48 IST" duration-ms="24411" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -53,7 +53,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-06-23T23:23:31 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-23T23:23:49 IST" duration-ms="18183" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-06-24T00:37:48 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-24T00:38:07 IST" duration-ms="18918" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -66,27 +66,10 @@
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[Incorrect Runtime URL expected [https://decimal-vhub.vahanacloud.xyz] but found [https://decimal-vhub.vahanacloud.xyz/]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Incorrect Runtime URL expected [https://decimal-vhub.vahanacloud.xyz] but found [https://decimal-vhub.vahanacloud.xyz/]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertEqualsImpl(Assert.java:140)
-at org.testng.Assert.assertEquals(Assert.java:122)
-at org.testng.Assert.assertEquals(Assert.java:629)
-at pageObjects.VBankLandingPage.verifyRuntimeUrl(VBankLandingPage.java:50)
-at stepDefinitions.VBankRunTimeSD.the_system_should_redirect_the_user_to_the_runtime_environment(VBankRunTimeSD.java:67)
-at ✽.the system should redirect the user to the Runtime environment(file:///C:/Users/Akshay%20rajput/Downloads/CucumberFramework/CucumberFramework/src/test/java/features/VBankRunTime.feature:8)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-06-23T23:23:49 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-23T23:23:54 IST" duration-ms="4276" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-06-24T00:38:07 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-24T00:38:12 IST" duration-ms="4626" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -102,7 +85,7 @@ at ✽.the system should redirect the user to the Runtime environment(file:///C:
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-06-23T23:23:54 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-23T23:23:59 IST" duration-ms="5279" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-06-24T00:38:12 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-24T00:38:17 IST" duration-ms="5548" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -118,7 +101,7 @@ at ✽.the system should redirect the user to the Runtime environment(file:///C:
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-06-23T23:23:59 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-23T23:24:05 IST" duration-ms="5696" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-06-24T00:38:17 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-24T00:38:24 IST" duration-ms="6402" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -134,7 +117,7 @@ at ✽.the system should redirect the user to the Runtime environment(file:///C:
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-06-23T23:24:05 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-23T23:24:11 IST" duration-ms="6375" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-06-24T00:38:24 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-24T00:38:31 IST" duration-ms="7534" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -150,7 +133,7 @@ at ✽.the system should redirect the user to the Runtime environment(file:///C:
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-06-23T23:24:11 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-23T23:24:17 IST" duration-ms="5619" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-06-24T00:38:31 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-24T00:38:37 IST" duration-ms="5788" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -166,7 +149,7 @@ at ✽.the system should redirect the user to the Runtime environment(file:///C:
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-06-23T23:24:17 IST" name="tearDownClass" finished-at="2025-06-23T23:24:17 IST" duration-ms="750" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-06-24T00:38:37 IST" name="tearDownClass" finished-at="2025-06-24T00:38:38 IST" duration-ms="732" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
