@@ -31,7 +31,6 @@ public class VBankRunTimeSD {
 		this.vHubAssetDetailPage = testContextSetup.pageObjectManager.getVHubAssetDetailPage();
 		this.vHubLandingPage = testContextSetup.pageObjectManager.getVHubLandingPage();
 		this.vBankLandingPage = testContextSetup.pageObjectManager.getVBankLandingPage();
-		
 	}
 	
 	@Given("the user is logged in and on the vHub home page")

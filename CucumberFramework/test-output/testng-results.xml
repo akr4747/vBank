@@ -1,27 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="10" passed="9" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-30T16:03:53 IST" name="Default suite" finished-at="2025-06-30T16:04:03 IST" duration-ms="10107">
+  <suite started-at="2025-07-01T01:44:42 IST" name="Default suite" finished-at="2025-07-01T01:46:37 IST" duration-ms="115062">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@2d3379b4]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-06-30T16:03:53 IST" name="Default test" finished-at="2025-06-30T16:04:03 IST" duration-ms="10107">
+    <test started-at="2025-07-01T01:44:42 IST" name="Default test" finished-at="2025-07-01T01:46:37 IST" duration-ms="115062">
       <class name="cucumberOptions.TestNGTestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:cucumberOptions.TestNGTestRunner@2d3379b4]" started-at="2025-06-30T16:03:53 IST" name="setUpClass" finished-at="2025-06-30T16:03:55 IST" duration-ms="1335" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-07-01T01:44:42 IST" name="setUpClass" finished-at="2025-07-01T01:44:43 IST" duration-ms="1200" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@6075b369]]>
+                <![CDATA[org.testng.TestRunner@755009f2]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@2d3379b4]" started-at="2025-06-30T16:03:55 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-06-30T16:04:03 IST" duration-ms="8062" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-07-01T01:44:43 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-01T01:45:01 IST" duration-ms="18081" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Veirfy Successfully navigate to vBank Landing Page after login"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Verify navigate to vBank Landing Page successfully.]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-07-01T01:45:01 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-01T01:45:22 IST" duration-ms="21161" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify Fill all required fields and publish the app to Sandbox."]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Verify Publish app to Sandbox successfully.]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-07-01T01:45:22 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-01T01:45:39 IST" duration-ms="16905" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Successfully navigate to the Runtime environment after login"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Verify navigation from Control Plane to Runtime Environment]"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Incorrect Runtime URL expected [https://decimal-vhub.vahanacloud.xyz/] but found [https://decimal-vhub.vahanacloud.com/]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Incorrect Runtime URL expected [https://decimal-vhub.vahanacloud.xyz/] but found [https://decimal-vhub.vahanacloud.com/]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+at org.testng.Assert.assertEquals(Assert.java:122)
+at org.testng.Assert.assertEquals(Assert.java:629)
+at pageObjects.VBankLandingPage.verifyRuntimeUrl(VBankLandingPage.java:50)
+at stepDefinitions.VBankRunTimeSD.the_system_should_redirect_the_user_to_the_runtime_environment(VBankRunTimeSD.java:66)
+at ✽.the system should redirect the user to the Runtime environment(file:///C:/Users/Akshay%20rajput/Downloads/CucumberFramework/CucumberFramework/src/test/java/features/VBankRunTime.feature:8)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-07-01T01:45:39 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-01T01:45:45 IST" duration-ms="5572" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -37,7 +102,103 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:cucumberOptions.TestNGTestRunner@2d3379b4]" started-at="2025-06-30T16:04:03 IST" name="tearDownClass" finished-at="2025-06-30T16:04:03 IST" duration-ms="666" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-07-01T01:45:45 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-01T01:45:49 IST" duration-ms="4249" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify Navigate to Top Use Cases from the banner image."]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Verify Explore Top Use Cases from Banner.]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-07-01T01:45:49 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-01T01:45:54 IST" duration-ms="5138" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify Developer Console link opens the Vahana Account page."]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Verify vHub Header Navigation Links]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-07-01T01:45:54 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-01T01:46:00 IST" duration-ms="5599" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify Documentation link opens the Vahana Academy page."]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Verify vHub Header Navigation Links]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-07-01T01:46:00 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-01T01:46:06 IST" duration-ms="6468" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify Vahana Community link opens the Community page."]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Verify vHub Header Navigation Links]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-07-01T01:46:06 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-01T01:46:12 IST" duration-ms="5237" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Verify Search Experience for Asset type App on home page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Verify navigate to vHub Landing page and search the Asset from search bar.]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-07-01T01:46:12 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-01T01:46:36 IST" duration-ms="24823" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["User successfully navigates to the Subscriptions page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Navigate to Subscription Page]"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:cucumberOptions.TestNGTestRunner@618b19ad]" started-at="2025-07-01T01:46:36 IST" name="tearDownClass" finished-at="2025-07-01T01:46:37 IST" duration-ms="573" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

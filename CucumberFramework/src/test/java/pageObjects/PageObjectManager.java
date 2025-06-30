@@ -12,6 +12,8 @@ public class PageObjectManager {
 	public VBankConsentConfiguration vBankConsentConfiguration;
 	public VBankPublishApp vBankPublishApp;
 	public VHubExploreUseCasesSD vHubExploreUseCases;
+	public VHubAccountDetails vHubAccountDetails;
+	public VHubMySubscriptions vHubMySubscriptions;
 
 	public WebDriver driver;
 
@@ -48,6 +50,16 @@ public class PageObjectManager {
 	public VBankPublishApp getVBankPublishApp() {
 		vBankPublishApp = new VBankPublishApp(driver);
 		return vBankPublishApp;
+	}
+
+	public VHubAccountDetails getVHubAccountDetails() {
+		vHubAccountDetails = new VHubAccountDetails(driver);
+		return vHubAccountDetails;
+	}
+
+	public VHubMySubscriptions getVhubMySubscriptions() {
+		vHubMySubscriptions =new VHubMySubscriptions(driver);
+		return vHubMySubscriptions;
 	}
 
 	

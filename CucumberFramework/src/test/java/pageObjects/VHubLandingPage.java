@@ -63,6 +63,12 @@ public class VHubLandingPage {
 
 	@FindBy(xpath = "(//a[@rel='noopener noreferrer'])[2]")
 	private WebElement vahana_Community;
+	
+	@FindBy(xpath="//div[@class='profile-details']")
+	private WebElement profileDetails;
+	
+	@FindBy(xpath="//a[@routerlink='/ManageAccount/AccountDetails']")
+	private WebElement accountSettings;
 
 	// ------Login Methods------
 
@@ -200,6 +206,13 @@ public class VHubLandingPage {
 		wait.until(ExpectedConditions.elementToBeClickable(vahana_Community)).click();
 	}
 	
-
+	public void clickProfileDetails() {
+		profileDetails.click();
+	}
+		
+	public void clickAccountSettings() {
+		wait.until(ExpectedConditions.elementToBeClickable(accountSettings)).click();
+	}
+ 
 
 }
