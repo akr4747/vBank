@@ -35,7 +35,7 @@ public class VHubAssetDetailPage {
 	@FindBy(xpath = "//nav[contains(@class, 'nav-items')]//a[normalize-space(text())='About']")
 	private  WebElement  aboutTab;
 	
-	@FindBy(xpath = "//nav[contains(@class, 'nav-items')]//a[normalize-space(text())='What's Included']")
+	@FindBy(xpath = "//nav[contains(@class, 'nav-items')]//a[normalize-space(text())=\"What's Included\"]")
 	private WebElement whatsIncludedTab;
 	
 	@FindBy(xpath = "//nav[contains(@class, 'nav-items')]//a[normalize-space(text())='Linked Use Cases']")
@@ -125,5 +125,8 @@ public class VHubAssetDetailPage {
 		supportTab.click();
 	}
 
-	
+	public WebElement userInOnAssetDetailPage() {
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='details']/h2")));
+		
+	}
 }

@@ -3,7 +3,6 @@ package stepDefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pageObjects.VBankLandingPage;
 import pageObjects.VHubAssetDetailPage;
 import pageObjects.VHubLandingPage;
 import utils.TestContextSetup;
@@ -36,14 +35,19 @@ public class VHubAppTabsSD {
 	@When("the user navigates to the App Asset Detail page")
 	public void the_user_navigates_to_the_app_asset_detail_page() {
 	    
-		
+		vHubAssetDetailPage.userInOnAssetDetailPage();
 		
 		
 	}
 	@Then("the user should be able to successfully navigate through all available tabs")
 	public void the_user_should_be_able_to_successfully_navigate_through_all_available_tabs() {
 		
-	  
+		vHubAssetDetailPage.clickAboutTab();
+		vHubAssetDetailPage.ClickWhatsIncludedTab();
+		vHubAssetDetailPage.clicklinkedUseCasesTab();
+		vHubAssetDetailPage.clickTermsConditionsTab();
+		vHubAssetDetailPage.clickSupportTab();
+		
 	}
 
 }
