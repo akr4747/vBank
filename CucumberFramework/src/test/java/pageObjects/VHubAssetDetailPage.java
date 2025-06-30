@@ -31,6 +31,21 @@ public class VHubAssetDetailPage {
 
 	@FindBy(xpath = "//button[contains(@class, 'mdc-button') and .//span[normalize-space(text())='Configure App']]")
 	private WebElement configureApp;
+	
+	@FindBy(xpath = "//nav[contains(@class, 'nav-items')]//a[normalize-space(text())='About']")
+	private  WebElement  aboutTab;
+	
+	@FindBy(xpath = "//nav[contains(@class, 'nav-items')]//a[normalize-space(text())='What's Included']")
+	private WebElement whatsIncludedTab;
+	
+	@FindBy(xpath = "//nav[contains(@class, 'nav-items')]//a[normalize-space(text())='Linked Use Cases']")
+	private WebElement linkedUseCasesTab;
+	
+	@FindBy(xpath ="//nav[contains(@class, 'nav-items')]//a[normalize-space(text())='Terms & Conditions']")
+    private  WebElement termsConditionsTab;
+	
+	@FindBy(xpath= "//nav[contains(@class, 'nav-items')]//a[normalize-space(text())='Support']")
+	private WebElement supportTab;
 
 	public void clickExperienceOrConfigureApp() {
 		
@@ -42,8 +57,8 @@ public class VHubAssetDetailPage {
 			if (experienceButton.isDisplayed()) {
 				experienceButton.click();
 				// Wait for the "Configure App" button to appear
-				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-						"//button[contains(@class, 'mdc-button') and .//span[normalize-space(text())='Configure App']]")));
+//				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
+	//					"//button[contains(@class, 'mdc-button') and .//span[normalize-space(text())='Configure App']]")));
 			}
 		} catch (Exception e) {
 			// "Experience For Free" is not present — possibly already clicked earlier
@@ -89,6 +104,26 @@ public class VHubAssetDetailPage {
 			return false;
 		}
 	}
+	
+	public void clickAboutTab() {
+		aboutTab.click();
+	}
+	
+	public void ClickWhatsIncludedTab() {
+		whatsIncludedTab.click();
+	}
 
+	public void clicklinkedUseCasesTab() {
+		linkedUseCasesTab.click();
+	}
+	
+	public void clickTermsConditionsTab() {
+		termsConditionsTab.click();
+	}
+	
+	public void clickSupportTab() {
+		supportTab.click();
+	}
 
+	
 }
