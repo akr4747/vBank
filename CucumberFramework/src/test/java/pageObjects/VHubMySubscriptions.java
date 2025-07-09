@@ -27,13 +27,19 @@ public class VHubMySubscriptions {
 	@FindBy(xpath="//button/span[@class='mdc-button__label']")
 	private WebElement exploreAssets;
 	
+	@FindBy(xpath="(//button[@color='primary']/span)[2]")
+	private WebElement exploreUseCase;
+	
 	
    public void clickOnExploreAssetsOrUserOnMySubscriptionsPage(String expectedText) {
 	   
 	   try {
 	        // Try waiting for the Explore Assets button
 	        wait.until(ExpectedConditions.visibilityOf(exploreAssets)).click();
-	        Assert.assertEquals(driver.getTitle(), "Vahana Hub", "Page title mismatch after clicking Explore.");
+	        wait.until(ExpectedConditions.elementToBeClickable(exploreUseCase));
+	        String actualText = exploreUseCase.getText();
+	        String expectedText1="Explore Use Cases";
+	        Assert.assertEquals(actualText,expectedText1, "Button text mismatch after clicking Explore.");
 	        
 	    } catch (Exception e) {
 	        // If Explore button is not found, then validate asset table instead
