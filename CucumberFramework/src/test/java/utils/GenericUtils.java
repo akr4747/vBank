@@ -15,7 +15,7 @@ import org.testng.Assert;
 import io.netty.handler.timeout.TimeoutException;
 
 public class GenericUtils {
-	public WebDriver driver;
+	protected WebDriver driver;
 	public WebDriverWait wait;
 
 	public GenericUtils(WebDriver driver) {

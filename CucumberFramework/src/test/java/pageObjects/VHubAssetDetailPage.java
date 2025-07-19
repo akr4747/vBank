@@ -51,6 +51,8 @@ public class VHubAssetDetailPage {
 	private WebElement supportTab;
 	
 	private By assetDetailsText= By.xpath("//span[@class='highlight']");
+	
+	private By appAssetName=By.xpath("//div[@class='details']//h2");
 
 	public boolean clickExperienceOrConfigureApp() {
 	    int attempts = 0;
@@ -122,8 +124,12 @@ public class VHubAssetDetailPage {
 		supportTab.click();
 	}
 
-	public WebElement userInOnAssetDetailPage() {
-		return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='details']/h2")));
+	public WebElement userInOnAssetDetailPage(String expectedAppName) {
+		WebElement appAssetNameElement =  wait.until(ExpectedConditions.visibilityOfElementLocated(appAssetName));
+	    
+	    String actualText = driver.findElement(appAssetName).getText().trim();
+	    Assert.assertEquals(actualText, expectedAppName, "Incorrect APP name on Asset Detail Page.");    
+	    return appAssetNameElement;  // or return the already located WebElement
 	}
 	
 	public void assetDetailsText() {

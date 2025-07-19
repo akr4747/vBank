@@ -36,8 +36,7 @@ public class VHubAppTabsSD {
 	@When("the user navigates to the App Asset Detail page")
 	public void the_user_navigates_to_the_app_asset_detail_page() {
 	    
-		vHubAssetDetailPage.userInOnAssetDetailPage();
-		
+		vHubAssetDetailPage.userInOnAssetDetailPage(TestData.ASSET_NAME_CONSENT);
 		
 	}
 	@Then("the user should be able to successfully navigate through all available tabs")

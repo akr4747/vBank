@@ -49,6 +49,8 @@ public class VHubLandingPage extends GenericUtils{
 	
 	private By clickOnvConsentCard = By.xpath("//div[@title='vConsent']");
 
+	private By clickOnAPICard=By.xpath("(//div[@class='mktplc-card_header-title tite-pos'])[1]");
+	
 	@FindBy(xpath = "//span[text()='Explore Use Cases']")
 	private WebElement explore_Use_Case;
 
@@ -153,15 +155,17 @@ public class VHubLandingPage extends GenericUtils{
 	}
 	
 	public void click_On_vConsent_Card(String assetName) {
-		
-	//	WebElement clickOnCard = wait.until(ExpectedConditions.elementToBeClickable(clickOnvConsentCard));
-	//	((JavascriptExecutor) driver).executeScript("arguments[0].click();", clickOnCard);
-		
 		By assetCard = By.xpath("//div[@title='" + assetName + "']");
 	    WebElement card = wait.until(ExpectedConditions.elementToBeClickable(assetCard));
 	    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", card);
 
 	}
+	
+	public void click_On_API_Card(String apiName) {		
+		 By apiCard = By.xpath("//div[normalize-space(@title)='" + apiName + "']");
+		    WebElement apiAsset = wait.until(ExpectedConditions.elementToBeClickable(apiCard));
+		    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", apiAsset);
+		}
 	
 	public boolean isSearchBoxVisible() {
 		try {
@@ -184,7 +188,6 @@ public class VHubLandingPage extends GenericUtils{
 	}
 
 	public String titleTopUseCases() {
-//		return title_Top_Use_Cases.getText();
 		String fullText = title_Top_Use_Cases.getText();
 		// If text includes "Sort By", extract only "Top Use Cases"
 		return fullText.split("Sort By")[0].trim();

@@ -14,6 +14,7 @@ public class PageObjectManager {
 	public VHubExploreUseCasesSD vHubExploreUseCases;
 	public VHubAccountDetails vHubAccountDetails;
 	public VHubMySubscriptions vHubMySubscriptions;
+	public APIAssetDetailPage apiAssetDetailPage;
 
 	public WebDriver driver;
 
@@ -61,6 +62,12 @@ public class PageObjectManager {
 		vHubMySubscriptions =new VHubMySubscriptions(driver);
 		return vHubMySubscriptions;
 	}
+
+	public APIAssetDetailPage getapiAssetDetailPage() {
+		apiAssetDetailPage =new APIAssetDetailPage(driver);
+		return apiAssetDetailPage;
+	}
+
 
 	
 
