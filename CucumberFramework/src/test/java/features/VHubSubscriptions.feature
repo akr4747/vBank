@@ -1,6 +1,6 @@
 Feature: Navigate to Subscription Page
 
-  @vHub1
+  @vHub
   Scenario: User successfully navigates to the Subscriptions page
     Given the user is logged in and lands on the vHub page
     When the user navigates to the Account Details page

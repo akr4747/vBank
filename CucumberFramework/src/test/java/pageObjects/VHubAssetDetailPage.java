@@ -1,14 +1,17 @@
 package pageObjects;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import io.netty.handler.timeout.TimeoutException;
 
@@ -46,55 +49,49 @@ public class VHubAssetDetailPage {
 	
 	@FindBy(xpath= "//nav[contains(@class, 'nav-items')]//a[normalize-space(text())='Support']")
 	private WebElement supportTab;
+	
+	private By assetDetailsText= By.xpath("//span[@class='highlight']");
 
-	public void clickExperienceOrConfigureApp() {
-		
-		try {
-			// Check if "Experience For Free" button is present and visible
-			WebElement experienceButton = wait.until(ExpectedConditions
-					.visibilityOfElementLocated(By.xpath("(//span[text()='Experience For Free'])[1]")));
+	public boolean clickExperienceOrConfigureApp() {
+	    int attempts = 0;
+	    while (attempts < 2) {
+	        try {
+	            // Re-locate inside the loop to avoid stale reference
+	            List<WebElement> experienceButtons = driver.findElements(
+	                    By.xpath("(//button[.//span[normalize-space(text())='Experience For Free']])[1]"));
 
-			if (experienceButton.isDisplayed()) {
-				experienceButton.click();
-				// Wait for the "Configure App" button to appear
-//				wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(
-	//					"//button[contains(@class, 'mdc-button') and .//span[normalize-space(text())='Configure App']]")));
-			}
-		} catch (Exception e) {
-			// "Experience For Free" is not present — possibly already clicked earlier
-			System.out.println("\"Experience For Free\" button not found. Assuming it's already clicked.");
-		}
+	            if (!experienceButtons.isEmpty() && experienceButtons.get(0).isDisplayed()) {
+	                experienceButtons.get(0).click();
+	                System.out.println("Clicked on 'Experience For Free' button.");
 
-		// Now, try to click "Configure App"
-		WebElement configureAppButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(
-				"//button[contains(@class, 'mdc-button') and .//span[normalize-space(text())='Configure App']]")));
-		configureAppButton.click();
+	                // Wait for auto-redirection (new tab opened)
+	                WebDriverWait tempWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	                tempWait.until(d -> d.getWindowHandles().size() > 1);
+
+	                return false; // No manual switch needed
+	            }
+	            break; // exit if not found
+	        } catch (StaleElementReferenceException e) {
+	//            System.out.println("StaleElementReferenceException caught. Retrying attempt " + (attempts + 1));
+	            attempts++;
+	        } catch (Exception e) {
+	//            System.out.println("Error clicking 'Experience For Free': " + e.getMessage());
+	            break;
+	        }
+	    }
+
+	    // Fallback: Try clicking "Configure App"
+	    try {
+	        WebElement configureAppButton = wait.until(ExpectedConditions.elementToBeClickable(
+	            By.xpath("//button[.//span[normalize-space(text())='Configure App']]")));
+	        configureAppButton.click();
+	        
+	        return true; // Manual switch required
+	    } catch (Exception e) {
+	        throw new RuntimeException("Neither 'Experience For Free' nor 'Configure App' buttons could be clicked.", e);
+	    }
 	}
-
-	/*
-	 * public void clickExperienceOrConfigureApp() { WebDriverWait wait = new
-	 * WebDriverWait(driver, Duration.ofSeconds(15));
-	 * 
-	 * By experienceBtnLocator =
-	 * By.xpath("(//span[text()='Experience For Free'])[1]"); By configureBtnLocator
-	 * = By.
-	 * xpath("//button[contains(@class, 'mdc-button') and .//span[normalize-space(text())='Configure App']]"
-	 * );
-	 * 
-	 * try { // Try clicking "Experience For Free" if present and visible WebElement
-	 * experienceButton =
-	 * wait.until(ExpectedConditions.presenceOfElementLocated(experienceBtnLocator))
-	 * ; if (experienceButton.isDisplayed() && experienceButton.isEnabled()) {
-	 * experienceButton.click();
-	 * wait.until(ExpectedConditions.visibilityOfElementLocated(configureBtnLocator)
-	 * ); } } catch (TimeoutException e) { System.out.
-	 * println("\"Experience For Free\" button not found or already clicked."); }
-	 * 
-	 * // Click "Configure App" (whether just revealed or already available)
-	 * WebElement configureAppButton =
-	 * wait.until(ExpectedConditions.elementToBeClickable(configureBtnLocator));
-	 * configureAppButton.click(); }
-	 */
+	
 
 	public boolean isSearchResultDisplayed() {
 		try {
@@ -127,6 +124,12 @@ public class VHubAssetDetailPage {
 
 	public WebElement userInOnAssetDetailPage() {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='details']/h2")));
+	}
+	
+	public void assetDetailsText() {
 		
+		 wait.until(ExpectedConditions.visibilityOfElementLocated(assetDetailsText));
+         String actualText = driver.findElement(assetDetailsText).getText().trim();
+         Assert.assertEquals(actualText, "Asset Details", "Asset Details text mismatch.");
 	}
 }

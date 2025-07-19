@@ -33,7 +33,7 @@ public class VBankPublishApp {
 	@FindBy(xpath = "//button[.//span[text()=' Yes, Publish ']]")
 	private WebElement yesPublish;
 
-	@FindBy(xpath = "//p[text()='Your App has been successfully Published to Sandbox.']")
+	@FindBy(xpath = "//div[@class='popup-header']/h5")
 	private WebElement successMsg;
 
 	public void publish_Release_Name(String releaseName) {

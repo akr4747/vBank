@@ -2,6 +2,7 @@ package pageObjects;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,36 +22,45 @@ public class VHubMySubscriptions {
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(1));
 	}
 
-	@FindBy(xpath="(//div[@role='button']/div)[5]")
-	private WebElement  assetName;
+	private By assetName =By.xpath("(//div[@role='button']/div)[5]");
 	
-	@FindBy(xpath="//button/span[@class='mdc-button__label']")
-	private WebElement exploreAssets;
+	private By exploreAssets =By.xpath("//button/span[@class='mdc-button__label']");
 	
-	@FindBy(xpath="(//button[@color='primary']/span)[2]")
-	private WebElement exploreUseCase;
+	private By exploreUseCase = By.xpath("(//button[@color='primary']/span)[2]");
 	
 	
    public void clickOnExploreAssetsOrUserOnMySubscriptionsPage(String expectedText) {
-	   
-	   try {
-	        // Try waiting for the Explore Assets button
-	        wait.until(ExpectedConditions.visibilityOf(exploreAssets)).click();
-	        wait.until(ExpectedConditions.elementToBeClickable(exploreUseCase));
-	        String actualText = exploreUseCase.getText();
-	        String expectedText1="Explore Use Cases";
-	        Assert.assertEquals(actualText,expectedText1, "Button text mismatch after clicking Explore.");
-	        
-	    } catch (Exception e) {
-	        // If Explore button is not found, then validate asset table instead
-	        try {
-	            wait.until(ExpectedConditions.visibilityOf(assetName));
-	            String actualText = assetName.getText();
-	            Assert.assertEquals(actualText, expectedText, "Incorrect Text displayed on the subscription table.");
+	   WebDriverWait shortWait = new WebDriverWait(driver, Duration.ofSeconds(2));
+
+	   driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
+
+	    try {
+	        if (isElementVisible(exploreAssets, shortWait)) {
+	            driver.findElement(exploreAssets).click();
+
+	            wait.until(ExpectedConditions.visibilityOfElementLocated(exploreUseCase));
+	            String actualText = driver.findElement(exploreUseCase).getText().trim();
+	            Assert.assertEquals(actualText, "Explore Use Cases", "Explore button text mismatch.");
+	        } else if (isElementVisible(assetName, shortWait)) {
+	            String actualText = driver.findElement(assetName).getText().trim();
+	            Assert.assertEquals(actualText, expectedText, "Incorrect text on subscription table.");
 	            System.out.println("Asset table found and verified.");
-	        } catch (Exception ex) {
+	        } else {
 	            Assert.fail("Neither Explore Assets button nor Asset Table found.");
 	        }
+	    } finally {
+	        // Restore implicit wait
+	        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	    }
 	}
+
+   public boolean isElementVisible(By locator, WebDriverWait customWait) {
+	    try {
+	        customWait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+	        return true;
+	    } catch (Exception e) {
+	        return false;
+	    }
+	}
+
   }

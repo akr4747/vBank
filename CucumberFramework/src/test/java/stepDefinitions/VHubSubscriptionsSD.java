@@ -42,6 +42,6 @@ public class VHubSubscriptionsSD {
 	@Then("the user should be on the Subscriptions page")
 	public void the_user_should_be_on_the_subscriptions_page() {
 	  
-		vHubMySubscriptions.clickOnExploreAssetsOrUserOnMySubscriptionsPage("Live Status");
+		vHubMySubscriptions.clickOnExploreAssetsOrUserOnMySubscriptionsPage("Workspace Name");
 	}
 }

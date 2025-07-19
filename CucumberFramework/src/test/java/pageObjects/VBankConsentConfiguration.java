@@ -30,7 +30,7 @@ public class VBankConsentConfiguration {
 	@FindBy(xpath = "(//span[@class='mdc-button__label'])[3]")
 	private WebElement addNewConsentButton;
 
-	By enterConsentName = By.cssSelector("input[placeholder='Enter Consent Name']");
+	private By enterConsentName = By.cssSelector("input[placeholder='Enter Consent Name']");
 	
 	@FindBy(xpath="//textarea[@formcontrolname='description']")
 	private WebElement consent_Description;
@@ -113,71 +113,49 @@ public class VBankConsentConfiguration {
 	@FindBy(xpath="(//div[contains(text(),'Consent Notice Language 23')]/following::mat-select)[1]")
 	private WebElement consentLanguage23;
 	
-	@FindBy(xpath="(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[2]")
-	private WebElement consentType2;
+	private By consentType2 = By.xpath("(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[2]");
 	
-	@FindBy(xpath="(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[3]")
-	private WebElement consentType3;
+	private By consentType3 = By.xpath("(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[3]");
 	
-	@FindBy(xpath="(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[4]")
-	private WebElement consentType4;
+	private By consentType4 = By.xpath("(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[4]");
 	
-	@FindBy(xpath="(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[5]")
-	private WebElement consentType5;
+	private By consentType5 = By.xpath("(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[5]");
 	
-	@FindBy(xpath="(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[6]")
-	private WebElement consentType6;
+	private By consentType6 = By.xpath("(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[6]");
 	
-	@FindBy(xpath="(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[7]")
-	private WebElement consentType7;
+	private By consentType7 = By.xpath("(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[7]");
 	
-	@FindBy(xpath="(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[8]")
-	private WebElement consentType8;
+	private By consentType8 = By.xpath("(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[8]");
+
+	private By consentType9 = By.xpath("(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[9]");
 	
-	@FindBy(xpath="(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[9]")
-	private WebElement consentType9;
+	private By consentType10 = By.xpath("(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[10]");
 	
-	@FindBy(xpath="(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[10]")
-	private WebElement consentType10;
+	private By consentType11 = By.xpath("(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[11]");
+
+	private By consentType12 = By.xpath("(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[12]");
 	
-	@FindBy(xpath="(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[11]")
-	private WebElement consentType11;
+	private By consentType13 = By.xpath("(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[13]");
 	
-	@FindBy(xpath="(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[12]")
-	private WebElement consentType12;
+	private By consentType14 = By.xpath("(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[14]");
 	
-	@FindBy(xpath="(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[13]")
-	private WebElement consentType13;
+	private By consentType15 = By.xpath("(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[15]");
 	
-	@FindBy(xpath="(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[14]")
-	private WebElement consentType14;
+	private By consentType16 = By.xpath("(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[16]");
 	
-	@FindBy(xpath="(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[15]")
-	private WebElement consentType15;
+	private By consentType17 = By.xpath("(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[17]");
 	
-	@FindBy(xpath="(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[16]")
-	private WebElement consentType16;
+	private By consentType18 = By.xpath("(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[18]");
 	
-	@FindBy(xpath="(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[17]")
-	private WebElement consentType17;
+	private By consentType19 = By.xpath("(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[19]");
 	
-	@FindBy(xpath="(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[18]")
-	private WebElement consentType18;
+	private By consentType20 = By.xpath("(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[20]");
 	
-	@FindBy(xpath="(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[19]")
-	private WebElement consentType19;
+	private By consentType21 = By.xpath("(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[21]");
 	
-	@FindBy(xpath="(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[20]")
-	private WebElement consentType20;
+	private By consentType22 = By.xpath("(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[22]");
 	
-	@FindBy(xpath="(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[21]")
-	private WebElement consentType21;
-	
-	@FindBy(xpath="(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[22]")
-	private WebElement consentType22;
-	
-	@FindBy(xpath="(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[23]")
-	private WebElement consentType23;
+	private By consentType23 = By.xpath("(//mat-select[@placeholder='Select Option' and @formcontrolname='consentType'])[23]");
 	
 	@FindBy(xpath="(//label[contains(text(),'Consent Notice Text')]/following::textarea)[1]")
 	private WebElement enterConsentNotice2;
@@ -315,10 +293,17 @@ public class VBankConsentConfiguration {
 	}
 	
 	public void selectConsentType2() {
-		consentType2.click();
+/*		driver.findElement(consentType2).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-option")));
 		List<WebElement> options = driver.findElements(By.xpath("//mat-option"));
-		options.get(0).click();
+	//	options.get(0).click(); 
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", options.get(0)); */
+		
+		 driver.findElement(consentType2).click();
+         wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//mat-option"), 0));
+		  WebElement firstOption = driver.findElement(By.xpath("(//mat-option)[1]"));
+		  ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", firstOption);
+		  ((JavascriptExecutor) driver).executeScript("arguments[0].click();", firstOption);
 	}
 	
 	public void enterConsentNoticeText2(String consentNotice2) {
@@ -337,10 +322,11 @@ public class VBankConsentConfiguration {
 	}
 	
 	public void selectConsentType3() {
-		consentType3.click();
+		driver.findElement(consentType3).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-option")));
 		List<WebElement> options = driver.findElements(By.xpath("//mat-option"));
-		options.get(0).click();
+	//	options.get(0).click();
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", options.get(0));
 	}
 	
 	public void enterConsentNoticeText3(String  consentNotice3) {
@@ -359,10 +345,11 @@ public class VBankConsentConfiguration {
 	}
 	
 	public void selectConsentType4() {
-		consentType4.click();
+		driver.findElement(consentType4).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-option")));
 		List<WebElement> options = driver.findElements(By.xpath("//mat-option"));
-		options.get(0).click();
+	//	options.get(0).click();
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", options.get(0));
 	}
 	
 	public void enterConsentNoticeText4(String  consentNotice4) {
@@ -381,10 +368,11 @@ public class VBankConsentConfiguration {
 	}
 	
 	public void selectConsentType5() {
-		consentType5.click();
+		driver.findElement(consentType5).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-option")));
 		List<WebElement> options = driver.findElements(By.xpath("//mat-option"));
-		options.get(0).click();
+	//	options.get(0).click();
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", options.get(0));
 	}
 	
 	public void enterConsentNoticeText5(String  consentNotice5) {
@@ -403,10 +391,11 @@ public class VBankConsentConfiguration {
 	}
 	
 	public void selectConsentType6() {
-		consentType6.click();
+		driver.findElement(consentType6).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-option")));
 		List<WebElement> options = driver.findElements(By.xpath("//mat-option"));
-		options.get(0).click();
+	//	options.get(0).click();
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", options.get(0));
 	}
 	
 	public void enterConsentNoticeText6(String  consentNotice6) {
@@ -425,10 +414,11 @@ public class VBankConsentConfiguration {
 	}
 	
 	public void selectConsentType7() {
-		consentType7.click();
+		driver.findElement(consentType7).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-option")));
 		List<WebElement> options = driver.findElements(By.xpath("//mat-option"));
-		options.get(0).click();
+	//	options.get(0).click();
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", options.get(0));
 	}
 	
 	public void enterConsentNoticeText7(String  consentNotice7) {
@@ -447,10 +437,18 @@ public class VBankConsentConfiguration {
 	}
 	
 	public void selectConsentType8() {
-		consentType8.click();
+/*		driver.findElement(consentType8).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-option")));
 		List<WebElement> options = driver.findElements(By.xpath("//mat-option"));
-		options.get(0).click();
+//		options.get(0).click();
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", options.get(0)); */
+		
+		 driver.findElement(consentType8).click();
+         wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//mat-option"), 0));
+		  WebElement firstOption = driver.findElement(By.xpath("(//mat-option)[1]"));
+		  ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", firstOption);
+		  ((JavascriptExecutor) driver).executeScript("arguments[0].click();", firstOption);
+		
 	}
 	
 	public void enterConsentNoticeText8(String  consentNotice8) {
@@ -469,11 +467,19 @@ public class VBankConsentConfiguration {
 	}
 	
 	public void selectConsentType9() {
-		consentType9.click();
+/*		driver.findElement(consentType9).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-option")));
 		List<WebElement> options = driver.findElements(By.xpath("//mat-option"));
-		options.get(0).click();
-	}
+//		options.get(0).click();
+		 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", options);
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", options.get(0)); */
+		
+		 driver.findElement(consentType9).click();
+         wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//mat-option"), 0));
+		  WebElement firstOption = driver.findElement(By.xpath("(//mat-option)[1]"));
+		  ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", firstOption);
+		  ((JavascriptExecutor) driver).executeScript("arguments[0].click();", firstOption);
+	} 
 	
 	public void enterConsentNoticeText9(String  consentNotice9) {
 		 enterConsentNotice9.clear();
@@ -491,10 +497,11 @@ public class VBankConsentConfiguration {
 	}
 	
 	public void selectConsentType10() {
-		consentType10.click();
+		driver.findElement(consentType10).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-option")));
 		List<WebElement> options = driver.findElements(By.xpath("//mat-option"));
-		options.get(0).click();
+	//	options.get(0).click();
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", options.get(0));
 	}
 	
 	public void enterConsentNoticeText10(String  consentNotice10) {
@@ -513,10 +520,11 @@ public class VBankConsentConfiguration {
 	}
 	
 	public void selectConsentType11() {
-		consentType11.click();
+		driver.findElement(consentType11).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-option")));
 		List<WebElement> options = driver.findElements(By.xpath("//mat-option"));
-		options.get(0).click();
+//		options.get(0).click();
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", options.get(0));
 	}
 	
 	public void enterConsentNoticeText11(String  consentNotice11) {
@@ -535,10 +543,11 @@ public class VBankConsentConfiguration {
 	}
 	
 	public void selectConsentType12() {
-		consentType12.click();
+		driver.findElement(consentType12).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-option")));
 		List<WebElement> options = driver.findElements(By.xpath("//mat-option"));
-		options.get(0).click();
+	//	options.get(0).click();
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", options.get(0));
 	}
 	
 	public void enterConsentNoticeText12(String  consentNotice12) {
@@ -557,10 +566,11 @@ public class VBankConsentConfiguration {
 	}
 	
 	public void selectConsentType13() {
-		consentType13.click();
+		driver.findElement(consentType13).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-option")));
 		List<WebElement> options = driver.findElements(By.xpath("//mat-option"));
-		options.get(0).click();
+//		options.get(0).click();
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", options.get(0));
 	}
 	
 	public void enterConsentNoticeText13(String  consentNotice13) {
@@ -579,10 +589,11 @@ public class VBankConsentConfiguration {
 	}
 	
 	public void selectConsentType14() {
-		consentType14.click();
+		driver.findElement(consentType14).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-option")));
 		List<WebElement> options = driver.findElements(By.xpath("//mat-option"));
-		options.get(0).click();
+//		options.get(0).click();
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", options.get(0));
 	}
 	
 	public void enterConsentNoticeText14(String  consentNotice14) {
@@ -601,10 +612,17 @@ public class VBankConsentConfiguration {
 	}
 	
 	public void selectConsentType15() {
-		consentType15.click();
+/*		driver.findElement(consentType15).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-option")));
 		List<WebElement> options = driver.findElements(By.xpath("//mat-option"));
-		options.get(0).click();
+	//	options.get(0).click();
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", options.get(0)); */
+		
+		 driver.findElement(consentType15).click();
+         wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//mat-option"), 0));
+		  WebElement firstOption = driver.findElement(By.xpath("(//mat-option)[1]"));
+		  ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", firstOption);
+		  ((JavascriptExecutor) driver).executeScript("arguments[0].click();", firstOption);
 	}
 	
 	public void enterConsentNoticeText15(String  consentNotice15) {
@@ -623,10 +641,11 @@ public class VBankConsentConfiguration {
 	}
 	
 	public void selectConsentType16() {
-		consentType16.click();
+		driver.findElement(consentType16).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-option")));
 		List<WebElement> options = driver.findElements(By.xpath("//mat-option"));
-		options.get(0).click();
+	//	options.get(0).click();
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", options.get(0));
 	}
 	
 	public void enterConsentNoticeText16(String  consentNotice16) {
@@ -645,10 +664,11 @@ public class VBankConsentConfiguration {
 	}
 	
 	public void selectConsentType17() {
-		consentType17.click();
+		driver.findElement(consentType17).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-option")));
 		List<WebElement> options = driver.findElements(By.xpath("//mat-option"));
-		options.get(0).click();
+//		options.get(0).click();
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", options.get(0));
 	}
 	
 	public void enterConsentNoticeText17(String  consentNotice17) {
@@ -667,10 +687,11 @@ public class VBankConsentConfiguration {
 	}
 	
 	public void selectConsentType18() {
-		consentType18.click();
+		driver.findElement(consentType18).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-option")));
 		List<WebElement> options = driver.findElements(By.xpath("//mat-option"));
-		options.get(0).click();
+	//	options.get(0).click();
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", options.get(0));
 	}
 	
 	public void enterConsentNoticeText18(String  consentNotice18) {
@@ -689,10 +710,11 @@ public class VBankConsentConfiguration {
 	}
 	
 	public void selectConsentType19() {
-		consentType19.click();
+		driver.findElement(consentType19).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-option")));
 		List<WebElement> options = driver.findElements(By.xpath("//mat-option"));
-		options.get(0).click();
+	//	options.get(0).click();
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", options.get(0));
 	}
 	
 	public void enterConsentNoticeText19(String  consentNotice19) {
@@ -711,10 +733,11 @@ public class VBankConsentConfiguration {
 	}
 	
 	public void selectConsentType20() {
-		consentType20.click();
+		driver.findElement(consentType20).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-option")));
 		List<WebElement> options = driver.findElements(By.xpath("//mat-option"));
-		options.get(0).click();
+//		options.get(0).click();
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", options.get(0));
 	}
 	
 	public void enterConsentNoticeText20(String  consentNotice20) {
@@ -733,10 +756,11 @@ public class VBankConsentConfiguration {
 	}
 	
 	public void selectConsentType21() {
-		consentType21.click();
+		driver.findElement(consentType21).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-option")));
 		List<WebElement> options = driver.findElements(By.xpath("//mat-option"));
-		options.get(0).click();
+	//	options.get(0).click();
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", options.get(0));
 	}
 	
 	public void enterConsentNoticeText21(String  consentNotice21) {
@@ -755,10 +779,17 @@ public class VBankConsentConfiguration {
 	}
 	
 	public void selectConsentType22() {
-		consentType22.click();
+/*		driver.findElement(consentType22).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-option")));
 		List<WebElement> options = driver.findElements(By.xpath("//mat-option"));
-		options.get(0).click();
+//		options.get(0).click();
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", options.get(0)); */
+		
+		 driver.findElement(consentType22).click();
+         wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//mat-option"), 0));
+		  WebElement firstOption = driver.findElement(By.xpath("(//mat-option)[1]"));
+		  ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", firstOption);
+		  ((JavascriptExecutor) driver).executeScript("arguments[0].click();", firstOption);
 	}
 	
 	public void enterConsentNoticeText22(String  consentNotice22) {
@@ -777,10 +808,11 @@ public class VBankConsentConfiguration {
 	}
 	
 	public void selectConsentType23() {
-		consentType23.click();
+		driver.findElement(consentType23).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//mat-option")));
 		List<WebElement> options = driver.findElements(By.xpath("//mat-option"));
-		options.get(0).click();
+	//	options.get(0).click();
+		((JavascriptExecutor) driver).executeScript("arguments[0].click();", options.get(0));
 	}
 	
 	public void enterConsentNoticeText23(String  consentNotice23) {

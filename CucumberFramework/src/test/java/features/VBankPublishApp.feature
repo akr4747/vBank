@@ -1,7 +1,7 @@
 Feature:  Verify Publish app to Sandbox successfully.
 
   
-@vBank @repeat
+@vBank
   Scenario: Verify Fill all required fields and publish the app to Sandbox.
     Given User Land on vbank Landing page
     And Fill all the required field of App setting page

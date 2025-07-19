@@ -26,9 +26,9 @@ public class VBankAppSettings {
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 	}
 
-	By enterAppName = By.xpath("//input[@id='mat-input-0']");
+	private By enterAppName = By.xpath("//input[@id='mat-input-0']");
 	
-	By otherLanguage=By.xpath("//div[@class='mdc-evolution-chip-set__chips']");
+	private By otherLanguage=By.xpath("//div[@class='mdc-evolution-chip-set__chips']");
 	
 	@FindBy(xpath="//span[contains(@class,'mdc-list-item__primary-text') and normalize-space(text())='Assamese (as)']")
 	private WebElement assamLanguage;

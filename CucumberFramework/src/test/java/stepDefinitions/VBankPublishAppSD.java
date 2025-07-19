@@ -24,6 +24,7 @@ import pageObjects.VBankLandingPage;
 import pageObjects.VBankPublishApp;
 import pageObjects.VHubLandingPage;
 import utils.TestContextSetup;
+import utils.TestData;
 
 public class VBankPublishAppSD {
 
@@ -50,14 +51,20 @@ public class VBankPublishAppSD {
 	public void user_land_on_vbank_landing_page() throws InterruptedException {
 
 		vHubLandingPage.searchTextBox();
-		vHubLandingPage.enterAssetNameOnSearchBox("vConsent");
+		vHubLandingPage.enterAssetNameOnSearchBox(TestData.ASSET_NAME_CONSENT);
 		vHubLandingPage.hitEnter();
 		vHubLandingPage.sendEscapeKeyToSearchBox();
-		vHubLandingPage.click_On_vConsent_Card();
-		vHubAssetDetailPage.clickExperienceOrConfigureApp();
-		testContextSetup.genericUtils.SwitchWindowToChild();
-		
+		vHubLandingPage.click_On_vConsent_Card(TestData.ASSET_NAME_CONSENT);
+		 boolean shouldSwitchWindow = vHubAssetDetailPage.clickExperienceOrConfigureApp();
 
+		    if (shouldSwitchWindow) {
+		        testContextSetup.genericUtils.SwitchWindowToChild(); // only when "Configure App"
+		    } else {
+		        // When "Experience for Free" is clicked, we wait in that method itself for redirection
+		        // But we should still make sure we're on the child window
+		        testContextSetup.genericUtils.SwitchWindowToLastOpened();
+		    }
+		
 	}
 
 	@Given("Fill all the required field of App setting page")
@@ -131,12 +138,19 @@ public class VBankPublishAppSD {
 	public void the_user_is_on_the_v_bank_landing_page() {
 	    
 		vHubLandingPage.searchTextBox();
-		vHubLandingPage.enterAssetNameOnSearchBox("vConsent");
+		vHubLandingPage.enterAssetNameOnSearchBox(TestData.ASSET_NAME_CONSENT);
 		vHubLandingPage.hitEnter();
 		vHubLandingPage.sendEscapeKeyToSearchBox();
-		vHubLandingPage.click_On_vConsent_Card();
-		vHubAssetDetailPage.clickExperienceOrConfigureApp();
-		testContextSetup.genericUtils.SwitchWindowToChild();
+		vHubLandingPage.click_On_vConsent_Card(TestData.ASSET_NAME_CONSENT);
+		 boolean shouldSwitchWindow = vHubAssetDetailPage.clickExperienceOrConfigureApp();
+
+		    if (shouldSwitchWindow) {
+		        testContextSetup.genericUtils.SwitchWindowToChild(); // only when "Configure App"
+		    } else {
+		        // When "Experience for Free" is clicked, we wait in that method itself for redirection
+		        // But we should still make sure we're on the child window
+		        testContextSetup.genericUtils.SwitchWindowToLastOpened();
+		    }
 		
 	}
 	@When("the user selects all languages on the App Settings page")

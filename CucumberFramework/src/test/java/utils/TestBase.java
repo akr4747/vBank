@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Properties;
 import java.util.Set;
@@ -39,9 +40,26 @@ public class TestBase {
 			if(browser.equalsIgnoreCase("chrome"))
 			{
 				ChromeOptions chromeoption=new ChromeOptions();
+				
+			// Code to Disable "Google Password Manager" warning pop up window
+				HashMap<String, Object> prefs = new HashMap<>();
+				prefs.put("credentials_enable_service", false);
+				prefs.put("profile.password_manager_enabled", false);
+				chromeoption.setExperimentalOption("prefs", prefs);
+
+				// ✅ Use a fresh profile
+				chromeoption.addArguments("--guest"); // OR use below for temp profile
+				// chromeoption.addArguments("user-data-dir=/tmp/temp_profile");
+
+				// Suppress UI distractions
+				chromeoption.addArguments("--disable-notifications");
+				chromeoption.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
+				chromeoption.setExperimentalOption("useAutomationExtension", false);
+				
+				
 				 chromeoption.addArguments("--remote-allow-origins=*");
-		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"//src//test//resources//chromedriver");
-		driver = new ChromeDriver(chromeoption);// driver gets the life
+				 System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"//src//test//resources//chromedriver");
+				 driver = new ChromeDriver(chromeoption);// driver gets the life
 			}
 			if(browser.equalsIgnoreCase("firefox"))
 			{

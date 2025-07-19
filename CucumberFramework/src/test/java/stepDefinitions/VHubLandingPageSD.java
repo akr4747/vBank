@@ -15,6 +15,7 @@ import io.cucumber.java.en.When;
 import pageObjects.VHubAssetDetailPage;
 import pageObjects.VHubLandingPage;
 import utils.TestContextSetup;
+import utils.TestData;
 
 public class VHubLandingPageSD {
 
@@ -38,13 +39,13 @@ public class VHubLandingPageSD {
 		vHubLandingPage.searchTextBox();
 	}
 
-	@When("user searched Asset Type App {string} from home page")
-	public void user_searched_asset_type_app_from_home_page(String assetTypeApp) {
+	@When("user searched Asset Type App from home page")
+	public void user_searched_asset_type_app_from_home_page() {
 
-		vHubLandingPage.enterAssetNameOnSearchBox(assetTypeApp);
+		vHubLandingPage.enterAssetNameOnSearchBox(TestData.ASSET_NAME_CONSENT);
 		vHubLandingPage.hitEnter();
 		vHubLandingPage.sendEscapeKeyToSearchBox();
-		vHubLandingPage.click_On_vConsent_Card();
+		vHubLandingPage.click_On_vConsent_Card(TestData.ASSET_NAME_CONSENT);
 		
 	}
 

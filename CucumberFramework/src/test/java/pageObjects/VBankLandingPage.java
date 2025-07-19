@@ -24,11 +24,23 @@ public class VBankLandingPage {
 	@FindBy(xpath = "//div[@class='add-new']")
 	private WebElement createNewApp;
 	
-	@FindBy(xpath= "//span[@class='mdc-button__label']/span")
+	@FindBy(xpath= "(//button[@role='menuitem'])[1]")
 	private  WebElement accessAppConsole;
+	
+	@FindBy(xpath="(//button[@role='menuitem'])[2]")
+	private  WebElement accessOnSandbox;
+	
+	@FindBy(xpath="(//button[@role='menuitem'])[3]")
+	private WebElement accessOnProduction;
 	
 	@FindBy(xpath = "//div[@class='nav-title']")
 	private WebElement navTitle;
+	
+	@FindBy(xpath="//span[@class='user-name']")
+	private WebElement vBankUserName;
+	
+	@FindBy(xpath="//span[text()='Logout']")
+	private WebElement vBankLogout;
 
 	public void create_New_App() {
 		createNewApp.click();
@@ -38,6 +50,14 @@ public class VBankLandingPage {
 		accessAppConsole.click();
 	}
 	
+	public void clickAccessOnSandbox() {
+		wait.until(ExpectedConditions.elementToBeClickable(accessOnSandbox)).click();
+	}
+	
+	public void clickAccessOnProduction() {
+		wait.until(ExpectedConditions.elementToBeClickable(accessOnProduction)).click();
+	}
+	
 	 public void verifyUserIsOnVBankLandingPage() {
 	        new WebDriverWait(driver, Duration.ofSeconds(5))
 	            .until(ExpectedConditions.visibilityOf(navTitle));
@@ -45,8 +65,18 @@ public class VBankLandingPage {
 	    }
 	 
 
-	  public void verifyRuntimeUrl(String expectedURL) {
+	  public void verifyRuntimeUrl() {
 	        String actualURL = driver.getCurrentUrl();
-	        Assert.assertEquals(actualURL, expectedURL, "Incorrect Runtime URL");
+	        Assert.assertEquals(actualURL, "https://decimal-vhub.vahanacloud.xyz/login", "Incorrect Runtime URL");
 }
+	  
+	  public void clickUserName() {
+		  vBankUserName.click();
+	  }
+	  
+	  public void clickVBankLogout() {
+		  wait.until(ExpectedConditions.elementToBeClickable(vBankLogout)).click();
+	  }
+	  
+	  
 }

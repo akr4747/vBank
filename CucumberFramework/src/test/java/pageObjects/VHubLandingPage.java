@@ -5,26 +5,30 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
-public class VHubLandingPage {
+import utils.GenericUtils;
+
+public class VHubLandingPage extends GenericUtils{
 
 	public WebDriver driver;
 	public WebDriverWait wait;
 
 	public VHubLandingPage(WebDriver driver) {
+		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 	}
 
-	@FindBy(xpath = "//button[.//span[contains(text(), 'Login')]]")
-	private WebElement loginButton;
+	private By loginButton = By.xpath("//button[.//span[contains(text(), 'Login')]]");
 
 	@FindBy(xpath = "//input[@id='mat-input-1']")
 	private WebElement enterEmail;
@@ -41,7 +45,7 @@ public class VHubLandingPage {
 	@FindBy(xpath = "//input[@type='search']")
 	private WebElement searchBox;
 	
-	By clickOnvConsentCard = By.xpath("//div[@title='vConsent']");
+	private By clickOnvConsentCard = By.xpath("//div[@title='vConsent']");
 
 	@FindBy(xpath = "//span[text()='Explore Use Cases']")
 	private WebElement explore_Use_Case;
@@ -69,11 +73,41 @@ public class VHubLandingPage {
 	
 	@FindBy(xpath="//a[@routerlink='/ManageAccount/AccountDetails']")
 	private WebElement accountSettings;
+	
+	@FindBy(xpath="//button//span[@class='mat-mdc-menu-item-text']")
+	private WebElement vHublogout;
+	
+	private By exploreUseCaseButton = By.xpath("//div[@class='explore-btn']//button");
+	
+	private By trendingText=By.xpath("//*[normalize-space(.)='Trending']");
+	
+	private By featuredText=By.xpath("//*[normalize-space(.)='Featured']");
+	
+	private By mostPopularText=By.xpath("//*[normalize-space(.)='Most Popular']");
+
+	private By topUseCasesText=By.xpath("//*[normalize-space(.)='Top Use Cases']");
+	
+	// Explore All buttons
+	
+	@FindBy(xpath="(//div[@class='product-section_heading']//button//span[@class='mdc-button__label'])[1]")
+	private WebElement exploreAllTrending;
+	
+	@FindBy(xpath="(//div[@class='product-section_heading']//button//span[@class='mdc-button__label'])[2]")
+	private WebElement exploreAllFeatured;
+	
+	@FindBy(xpath="(//div[@class='product-section_heading']//button//span[@class='mdc-button__label'])[3]")
+	private WebElement exploreAllMostPopular;
+	
+	@FindBy(xpath="(//div[@class='product-section_heading']//button//span[@class='mdc-button__label'])[4]")
+	private WebElement exploreAllTopUseCases;
+	
+	@FindBy(xpath="(//div[@class='product-section_heading']//button//span[@class='mdc-button__label'])[5]")
+	private WebElement exploreAllTopPartners;
 
 	// ------Login Methods------
 
 	public void login_SignUp_Button() {
-		loginButton.click();
+		 driver.findElement(loginButton).click();
 	}
 
 	public void enter_User_Email(String userName) {
@@ -86,6 +120,10 @@ public class VHubLandingPage {
 
 	public void click_Login_Button() {
 		clickLogin.click();
+	}
+	
+	public void clickVHubLogout() {
+		wait.until(ExpectedConditions.elementToBeClickable(vHublogout)).click();
 	}
 
 	// --------- Search Methods ---------
@@ -108,24 +146,16 @@ public class VHubLandingPage {
 		searchBox.sendKeys(Keys.ESCAPE);
 	}
 	
-	public void click_On_vConsent_Card() {
+	public void click_On_vConsent_Card(String assetName) {
 		
-		WebElement clickOnCard = wait.until(ExpectedConditions.elementToBeClickable(clickOnvConsentCard));
-		((JavascriptExecutor) driver).executeScript("arguments[0].click();", clickOnCard);
+	//	WebElement clickOnCard = wait.until(ExpectedConditions.elementToBeClickable(clickOnvConsentCard));
+	//	((JavascriptExecutor) driver).executeScript("arguments[0].click();", clickOnCard);
+		
+		By assetCard = By.xpath("//div[@title='" + assetName + "']");
+	    WebElement card = wait.until(ExpectedConditions.elementToBeClickable(assetCard));
+	    ((JavascriptExecutor) driver).executeScript("arguments[0].click();", card);
+
 	}
-	
-/*	public void click_On_vConsent_Card() {
-	    By consentCardLocator = By.xpath("//div[@title='vConsent']");
-	    for (int attempt = 0; attempt < 2; attempt++) {
-	        try {
-	            WebElement clickOnCard = wait.until(ExpectedConditions.elementToBeClickable(consentCardLocator));
-	            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", clickOnCard);
-	            break;
-	        } catch (StaleElementReferenceException e) {
-	            System.out.println("Stale element encountered. Retrying...");
-	        }
-	    }
-	} */
 	
 	public boolean isSearchBoxVisible() {
 		try {
@@ -213,6 +243,99 @@ public class VHubLandingPage {
 	public void clickAccountSettings() {
 		wait.until(ExpectedConditions.elementToBeClickable(accountSettings)).click();
 	}
+	
+	public void vHubloginButton() {
+		 wait.until(ExpectedConditions.visibilityOfElementLocated(loginButton));
+         String actualText = driver.findElement(loginButton).getText().trim();
+         Assert.assertEquals(actualText, "Login", "Login button text mismatch.");
+		
+	}
+	
+	// Explore All
+	
+	public void clickExploreAllTrending() {
+		exploreAllTrending.click();
+	}
+	
+	public void clickExploreAllFeatured() {
+		scrollAndClick(exploreAllFeatured);
+	}
+	
+	public void clickExploreAllMostPopular() {
+	//	exploreAllMostPopular.click();
+		scrollAndClick(exploreAllMostPopular);
+	}
+	
+	public void clickExploreAllTopUseCases() {
+		scrollAndClick(exploreAllTopUseCases);
+	}
+		
+	public void clickExploreAllTopPartners() {
+		scrollAndClick(exploreAllTopPartners);
+	}
+	
+	// 
+	
+	public void exploreUseCaseText() {
+		 wait.until(ExpectedConditions.visibilityOfElementLocated(exploreUseCaseButton));
+         String actualText = driver.findElement(exploreUseCaseButton).getText().trim();
+         Assert.assertEquals(actualText, "Explore Use Cases", "Explore Use Cases button text mismatch.");
+	}
  
+	public void trendingLabel() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(trendingText));
+        String actualText = driver.findElement(trendingText).getText().trim();
+        Assert.assertEquals(actualText, "Trending", "Trending Label text mismatch.");
+	}
+	
+	public void featuredLabel() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(featuredText));
+        String actualText = driver.findElement(featuredText).getText().trim();
+        Assert.assertEquals(actualText, "Featured", "Featured Label text mismatch.");
+	}
+	
+	public void mostPopularLabel() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(mostPopularText));
+        String actualText = driver.findElement(mostPopularText).getText().trim();
+        Assert.assertEquals(actualText, "Most Popular", "Most Popular Label text mismatch.");
+	}
+	
+	public void topUseCasesLabel() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(topUseCasesText));
+        String actualText = driver.findElement(topUseCasesText).getText().trim();
+        Assert.assertEquals(actualText, "Top Use Cases", "Top Use Cases Label text mismatch.");
+	}
+	
+	public void topPartnersLabel() {
+	    int attempts = 0;
+	    while (attempts < 1) {
+	        try {
+	            // Re-find the element to avoid stale reference
+	            By topPartnersText = By.xpath("//div[@class='sort-div']");
+
+	            WebElement element = driver.findElement(topPartnersText);
+
+	            // Scroll into view using fresh reference
+	            ((JavascriptExecutor) driver).executeScript(
+	                "arguments[0].scrollIntoView({block:'center'});", element);
+
+	            // Wait until it is visible again
+	            wait.until(ExpectedConditions.visibilityOfElementLocated(topPartnersText));
+
+	            // Get text again with fresh element
+	            element = driver.findElement(topPartnersText); // Re-fetch again
+	            String actualText = element.getText().trim();
+
+	            // Assertion: just check it contains "Top Partners"
+	            Assert.assertTrue(actualText.contains("Top Partners"), "Top Partners label mismatch.");
+
+	            break; //  Success
+	        } catch (StaleElementReferenceException e) {
+	            System.out.println(" Retrying due to stale element: attempt " + (attempts + 1));
+	            attempts++;
+	        }
+	    }
+	}
+
 
 }

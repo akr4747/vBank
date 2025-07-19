@@ -17,6 +17,7 @@ import pageObjects.VBankLandingPage;
 import pageObjects.VHubAssetDetailPage;
 import pageObjects.VHubLandingPage;
 import utils.TestContextSetup;
+import utils.TestData;
 
 public class VBankRunTimeSD {
 
@@ -37,33 +38,55 @@ public class VBankRunTimeSD {
 	public void the_user_is_logged_in_and_on_the_v_hub_home_page() {
 	
 		vHubLandingPage.searchTextBox();
-		vHubLandingPage.enterAssetNameOnSearchBox("vConsent");
+		vHubLandingPage.enterAssetNameOnSearchBox(TestData.ASSET_NAME_CONSENT);
 		vHubLandingPage.hitEnter();
 		vHubLandingPage.sendEscapeKeyToSearchBox();
-		vHubLandingPage.click_On_vConsent_Card();
+		vHubLandingPage.click_On_vConsent_Card(TestData.ASSET_NAME_CONSENT);
 		
 	}
-	@When("the user clicks on the Asset Details page")
-	public void the_user_clicks_on_the_asset_details_page() {
-	
-		vHubAssetDetailPage.clickExperienceOrConfigureApp();	
-		testContextSetup.genericUtils.SwitchWindowToChild();
 
+	@When("the user opens the Asset Details page for the app")
+	public void the_user_opens_the_asset_details_page_for_the_app() {
+	    
+		 boolean shouldSwitchWindow = vHubAssetDetailPage.clickExperienceOrConfigureApp();
+
+		    if (shouldSwitchWindow) {
+		        testContextSetup.genericUtils.SwitchWindowToChild(); // only when "Configure App"
+		    } else {
+		        // When "Experience for Free" is clicked, we wait in that method itself for redirection
+		        // But we should still make sure we're on the child window
+		        testContextSetup.genericUtils.SwitchWindowToLastOpened();
+		    }
+		    
 	}
-	
-	@When("user on vBank Landing Page")
-	public void user_on_v_bank_landing_page() {
-	   
+	@When("the user is redirected to the vBank landing page")
+	public void the_user_is_redirected_to_the_v_bank_landing_page() {
+		
 		vBankLandingPage.verifyUserIsOnVBankLandingPage();
-	
+		
+// First Test Case
+	}
+	@Then("the system should navigate the user to the Sandbox Runtime environment")
+	public void the_system_should_navigate_the_user_to_the_production_runtime_environment() {
+	    
+		vBankLandingPage.clickViewInsights();
+		vBankLandingPage.clickAccessOnSandbox();
+		testContextSetup.genericUtils.SwitchWindowToChildToChild();
+		vBankLandingPage.verifyRuntimeUrl();
 	}
 	
-	@Then("the system should redirect the user to the Runtime environment")
-	public void the_system_should_redirect_the_user_to_the_runtime_environment() {
+//	Second Test Case
 	
+	@Then("the system should navigate the user to the Production Runtime environment")
+	public void the_system_should_navigate_the_user_to_the_sandbox_runtime_environment() {
+	   
 		vBankLandingPage.clickViewInsights();
+		vBankLandingPage.clickAccessOnProduction();
 		testContextSetup.genericUtils.SwitchWindowToChildToChild();
-		vBankLandingPage.verifyRuntimeUrl("https://decimal-vhub.vahanacloud.xyz/");
+		vBankLandingPage.verifyRuntimeUrl();
 		
 	}
+	
+	
+	
 }

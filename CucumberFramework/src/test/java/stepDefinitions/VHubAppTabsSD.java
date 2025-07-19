@@ -6,6 +6,7 @@ import io.cucumber.java.en.When;
 import pageObjects.VHubAssetDetailPage;
 import pageObjects.VHubLandingPage;
 import utils.TestContextSetup;
+import utils.TestData;
 
 public class VHubAppTabsSD {
 	
@@ -26,10 +27,10 @@ public class VHubAppTabsSD {
 	public void the_user_is_logged_in_and_on_the_v_hub_page() {
 		
 		vHubLandingPage.searchTextBox();
-		vHubLandingPage.enterAssetNameOnSearchBox("vConsent");
+		vHubLandingPage.enterAssetNameOnSearchBox(TestData.ASSET_NAME_CONSENT);
 		vHubLandingPage.hitEnter();
 		vHubLandingPage.sendEscapeKeyToSearchBox();
-		vHubLandingPage.click_On_vConsent_Card();
+		vHubLandingPage.click_On_vConsent_Card(TestData.ASSET_NAME_CONSENT);
 	    
 	}
 	@When("the user navigates to the App Asset Detail page")
