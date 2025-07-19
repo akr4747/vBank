@@ -2,23 +2,23 @@
 <testng-results ignored="0" total="19" passed="18" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-19T14:37:03 IST" name="Default suite" finished-at="2025-07-19T14:39:14 IST" duration-ms="131447">
+  <suite started-at="2025-07-19T16:42:30 IST" name="Default suite" finished-at="2025-07-19T16:45:43 IST" duration-ms="192260">
     <groups>
     </groups>
-    <test started-at="2025-07-19T14:37:03 IST" name="Default test" finished-at="2025-07-19T14:39:14 IST" duration-ms="131447">
+    <test started-at="2025-07-19T16:42:30 IST" name="Default test" finished-at="2025-07-19T16:45:43 IST" duration-ms="192260">
       <class name="cucumberOptions.TestNGTestRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T14:37:03 IST" name="setUpClass" finished-at="2025-07-19T14:37:04 IST" duration-ms="1149" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T16:42:30 IST" name="setUpClass" finished-at="2025-07-19T16:42:31 IST" duration-ms="1011" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@465eb466]]>
+                <![CDATA[org.testng.TestRunner@7e544223]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T14:37:04 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T14:37:11 IST" duration-ms="6329" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T16:42:31 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T16:42:38 IST" duration-ms="6382" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -34,7 +34,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T14:37:11 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T14:37:18 IST" duration-ms="7157" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T16:42:38 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T16:42:45 IST" duration-ms="7116" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -50,7 +50,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T14:37:18 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T14:37:23 IST" duration-ms="5095" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T16:42:45 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T16:42:55 IST" duration-ms="9823" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -66,7 +66,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T14:37:23 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T14:37:33 IST" duration-ms="10236" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T16:42:55 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T16:43:06 IST" duration-ms="11015" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -82,7 +82,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T14:37:33 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T14:37:53 IST" duration-ms="19717" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T16:43:06 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T16:43:46 IST" duration-ms="40015" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -103,9 +103,9 @@ For documentation on this error, please visit: https://selenium.dev/exceptions/#
 Build info: version: '4.1.1', revision: 'e8fcc2cecf'
 System info: host: 'DEC1128', ip: '10.0.0.195', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [1689f9c0e86bbc7ee823db9a604166b3, executeScript {script=arguments[0].click();, args=[{ELEMENT=f.37A6B2765888D00E02CD3390B164CFA6.d.DD1B80F911EFCBA8AADF2261E4A02F08.e.315, element-6066-11e4-a52e-4f735466cecf=f.37A6B2765888D00E02CD3390B164CFA6.d.DD1B80F911EFCBA8AADF2261E4A02F08.e.315}]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.69, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\AKSHAY~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60243}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60243/devtoo..., se:cdpVersion: 137.0.7151.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 1689f9c0e86bbc7ee823db9a604166b3]]>
+Command: [2dc7d175d8b44939b580713833da7eb4, executeScript {script=arguments[0].click();, args=[{ELEMENT=f.43C0FDF7D2584E31EF3F8B6DBE361F02.d.6AA4F3EE0F1A9059F5046578EB57F2C6.e.395, element-6066-11e4-a52e-4f735466cecf=f.43C0FDF7D2584E31EF3F8B6DBE361F02.d.6AA4F3EE0F1A9059F5046578EB57F2C6.e.395}]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.69, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\AKSHAY~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61297}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61297/devtoo..., se:cdpVersion: 137.0.7151.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2dc7d175d8b44939b580713833da7eb4]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
@@ -114,9 +114,9 @@ For documentation on this error, please visit: https://selenium.dev/exceptions/#
 Build info: version: '4.1.1', revision: 'e8fcc2cecf'
 System info: host: 'DEC1128', ip: '10.0.0.195', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.14'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [1689f9c0e86bbc7ee823db9a604166b3, executeScript {script=arguments[0].click();, args=[{ELEMENT=f.37A6B2765888D00E02CD3390B164CFA6.d.DD1B80F911EFCBA8AADF2261E4A02F08.e.315, element-6066-11e4-a52e-4f735466cecf=f.37A6B2765888D00E02CD3390B164CFA6.d.DD1B80F911EFCBA8AADF2261E4A02F08.e.315}]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.69, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\AKSHAY~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60243}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:60243/devtoo..., se:cdpVersion: 137.0.7151.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 1689f9c0e86bbc7ee823db9a604166b3
+Command: [2dc7d175d8b44939b580713833da7eb4, executeScript {script=arguments[0].click();, args=[{ELEMENT=f.43C0FDF7D2584E31EF3F8B6DBE361F02.d.6AA4F3EE0F1A9059F5046578EB57F2C6.e.395, element-6066-11e4-a52e-4f735466cecf=f.43C0FDF7D2584E31EF3F8B6DBE361F02.d.6AA4F3EE0F1A9059F5046578EB57F2C6.e.395}]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.69, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\AKSHAY~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61297}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:61297/devtoo..., se:cdpVersion: 137.0.7151.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2dc7d175d8b44939b580713833da7eb4
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -130,8 +130,8 @@ at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(Driver
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
 at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:477)
-at pageObjects.VBankConsentConfiguration.selectConsentType5(VBankConsentConfiguration.java:375)
-at stepDefinitions.VBankPublishAppSD.the_user_fills_in_all_required_fields_on_the_consent_configuration_page_with_consent_notice_text_in_each_selected_language_using_rich_html(VBankPublishAppSD.java:224)
+at pageObjects.VBankConsentConfiguration.selectConsentType11(VBankConsentConfiguration.java:527)
+at stepDefinitions.VBankPublishAppSD.the_user_fills_in_all_required_fields_on_the_consent_configuration_page_with_consent_notice_text_in_each_selected_language_using_rich_html(VBankPublishAppSD.java:248)
 at ✽.the user fills in all required fields on the Consent Configuration page with consent notice text in each selected language using Rich HTML(file:///C:/Users/Akshay%20rajput/Downloads/CucumberFramework/CucumberFramework/src/test/java/features/VBankPublishApp.feature:22)
 ]]>
             </full-stacktrace>
@@ -139,7 +139,7 @@ at ✽.the user fills in all required fields on the Consent Configuration page w
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T14:37:53 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T14:38:00 IST" duration-ms="7730" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T16:43:46 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T16:43:55 IST" duration-ms="9031" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -155,7 +155,7 @@ at ✽.the user fills in all required fields on the Consent Configuration page w
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T14:38:00 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T14:38:08 IST" duration-ms="7271" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T16:43:55 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T16:44:04 IST" duration-ms="8868" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -171,7 +171,7 @@ at ✽.the user fills in all required fields on the Consent Configuration page w
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T14:38:08 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T14:38:13 IST" duration-ms="5262" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T16:44:04 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T16:44:12 IST" duration-ms="7940" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -187,7 +187,7 @@ at ✽.the user fills in all required fields on the Consent Configuration page w
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T14:38:13 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T14:38:17 IST" duration-ms="4350" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T16:44:12 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T16:44:17 IST" duration-ms="5234" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -203,7 +203,7 @@ at ✽.the user fills in all required fields on the Consent Configuration page w
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T14:38:17 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T14:38:22 IST" duration-ms="4171" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T16:44:17 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T16:44:22 IST" duration-ms="5294" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -219,7 +219,7 @@ at ✽.the user fills in all required fields on the Consent Configuration page w
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T14:38:22 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T14:38:26 IST" duration-ms="4394" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T16:44:22 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T16:44:28 IST" duration-ms="5471" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -235,7 +235,7 @@ at ✽.the user fills in all required fields on the Consent Configuration page w
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T14:38:26 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T14:38:30 IST" duration-ms="4168" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T16:44:28 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T16:44:43 IST" duration-ms="15787" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -251,7 +251,7 @@ at ✽.the user fills in all required fields on the Consent Configuration page w
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T14:38:30 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T14:38:36 IST" duration-ms="5940" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T16:44:43 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T16:44:59 IST" duration-ms="15900" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -267,7 +267,7 @@ at ✽.the user fills in all required fields on the Consent Configuration page w
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T14:38:36 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T14:38:42 IST" duration-ms="5846" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T16:44:59 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T16:45:04 IST" duration-ms="5084" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -283,7 +283,7 @@ at ✽.the user fills in all required fields on the Consent Configuration page w
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T14:38:42 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T14:38:48 IST" duration-ms="6227" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T16:45:04 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T16:45:11 IST" duration-ms="6622" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -299,7 +299,7 @@ at ✽.the user fills in all required fields on the Consent Configuration page w
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T14:38:48 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T14:38:54 IST" duration-ms="5823" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T16:45:11 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T16:45:18 IST" duration-ms="6659" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -315,7 +315,7 @@ at ✽.the user fills in all required fields on the Consent Configuration page w
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T14:38:54 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T14:39:02 IST" duration-ms="8330" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T16:45:18 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T16:45:27 IST" duration-ms="8962" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -331,7 +331,7 @@ at ✽.the user fills in all required fields on the Consent Configuration page w
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T14:39:02 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T14:39:07 IST" duration-ms="4440" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T16:45:27 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T16:45:34 IST" duration-ms="7069" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -347,7 +347,7 @@ at ✽.the user fills in all required fields on the Consent Configuration page w
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T14:39:07 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T14:39:14 IST" duration-ms="7111" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T16:45:34 IST" name="runScenario" data-provider="scenarios" finished-at="2025-07-19T16:45:42 IST" duration-ms="8199" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -363,7 +363,7 @@ at ✽.the user fills in all required fields on the Consent Configuration page w
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T14:39:14 IST" name="tearDownClass" finished-at="2025-07-19T14:39:14 IST" duration-ms="605" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:cucumberOptions.TestNGTestRunner@36fc695d]" started-at="2025-07-19T16:45:42 IST" name="tearDownClass" finished-at="2025-07-19T16:45:43 IST" duration-ms="693" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

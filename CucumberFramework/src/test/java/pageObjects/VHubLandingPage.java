@@ -20,12 +20,14 @@ public class VHubLandingPage extends GenericUtils{
 
 	public WebDriver driver;
 	public WebDriverWait wait;
+	 GenericUtils utils;
 
 	public VHubLandingPage(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		this.utils = new GenericUtils(driver);
 	}
 
 	private By loginButton = By.xpath("//button[.//span[contains(text(), 'Login')]]");
@@ -86,6 +88,10 @@ public class VHubLandingPage extends GenericUtils{
 	private By mostPopularText=By.xpath("//*[normalize-space(.)='Most Popular']");
 
 	private By topUseCasesText=By.xpath("//*[normalize-space(.)='Top Use Cases']");
+	
+	private By topPartnersText = By.xpath("//div[@class='sort-div']");
+	
+	private By filterTitle = By.xpath("//span[@class='form-title']");
 	
 	// Explore All buttons
 	
@@ -286,55 +292,42 @@ public class VHubLandingPage extends GenericUtils{
 		wait.until(ExpectedConditions.visibilityOfElementLocated(trendingText));
         String actualText = driver.findElement(trendingText).getText().trim();
         Assert.assertEquals(actualText, "Trending", "Trending Label text mismatch.");
+        
+        utils.assertFormTitleVisible(filterTitle); // Filter title should be visible
 	}
 	
 	public void featuredLabel() {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(featuredText));
         String actualText = driver.findElement(featuredText).getText().trim();
         Assert.assertEquals(actualText, "Featured", "Featured Label text mismatch.");
+        
+        utils.assertFormTitleVisible(filterTitle); // Filter title should be visible
 	}
 	
 	public void mostPopularLabel() {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(mostPopularText));
         String actualText = driver.findElement(mostPopularText).getText().trim();
         Assert.assertEquals(actualText, "Most Popular", "Most Popular Label text mismatch.");
+        
+        utils.assertFormTitleVisible(filterTitle); // Filter title should be visible
 	}
 	
 	public void topUseCasesLabel() {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(topUseCasesText));
         String actualText = driver.findElement(topUseCasesText).getText().trim();
         Assert.assertEquals(actualText, "Top Use Cases", "Top Use Cases Label text mismatch.");
+        
+        utils.assertFormTitleNotVisible(filterTitle); // Filter title should not be visible
 	}
 	
 	public void topPartnersLabel() {
-	    int attempts = 0;
-	    while (attempts < 1) {
-	        try {
-	            // Re-find the element to avoid stale reference
-	            By topPartnersText = By.xpath("//div[@class='sort-div']");
-
-	            WebElement element = driver.findElement(topPartnersText);
-
-	            // Scroll into view using fresh reference
-	            ((JavascriptExecutor) driver).executeScript(
-	                "arguments[0].scrollIntoView({block:'center'});", element);
-
-	            // Wait until it is visible again
-	            wait.until(ExpectedConditions.visibilityOfElementLocated(topPartnersText));
-
-	            // Get text again with fresh element
-	            element = driver.findElement(topPartnersText); // Re-fetch again
-	            String actualText = element.getText().trim();
-
-	            // Assertion: just check it contains "Top Partners"
-	            Assert.assertTrue(actualText.contains("Top Partners"), "Top Partners label mismatch.");
-
-	            break; //  Success
-	        } catch (StaleElementReferenceException e) {
-	            System.out.println(" Retrying due to stale element: attempt " + (attempts + 1));
-	            attempts++;
-	        }
-	    }
+		
+		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(topPartnersText));
+	    String actualText = element.getText().trim();
+	    String cleanedText = actualText.split("Sort By")[0].trim();
+	    Assert.assertEquals(cleanedText, "Top Partners", "Top Partners label mismatch.");
+	    
+	    utils.assertFormTitleNotVisible(filterTitle); // Filter title should not be visible
 	}
 
 

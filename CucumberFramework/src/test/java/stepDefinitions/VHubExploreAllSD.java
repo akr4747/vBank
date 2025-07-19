@@ -30,7 +30,7 @@ public class VHubExploreAllSD {
 		vHubLandingPage.clickExploreAllTrending();
 	}
 
-	@Then("the system should apply the Trending filter")
+	@Then("the system should visible the Trending lable and Filter title")
 	public void the_system_should_apply_the_trending_filter() {
 		vHubLandingPage.trendingLabel();
 	}
@@ -41,7 +41,7 @@ public class VHubExploreAllSD {
 		vHubLandingPage.clickExploreAllFeatured();
 	}
 
-	@Then("the system should apply the Featured filter")
+	@Then("the system should visible the Featured lable and Filter title")
 	public void the_system_should_apply_the_featured_filter() {
 		vHubLandingPage.featuredLabel();
 	}
@@ -53,7 +53,7 @@ public class VHubExploreAllSD {
 		vHubLandingPage.clickExploreAllMostPopular();
 	}
 
-	@Then("the system should apply the Most Popular filter")
+	@Then("the system should visible the Most Popular lable and Filter title")
 	public void the_system_should_apply_the_most_popular_filter() {
 		vHubLandingPage.mostPopularLabel();
 	}
@@ -65,7 +65,7 @@ public class VHubExploreAllSD {
 		vHubLandingPage.clickExploreAllTopUseCases();
 	}
 
-	@Then("the system should apply the Top Use Cases filter")
+	@Then("the system should visible the  Top Use Cases lable not the Filter title")
 	public void the_system_should_apply_the_top_use_cases_filter() {
 		vHubLandingPage.topUseCasesLabel();
 	}
@@ -77,7 +77,7 @@ public class VHubExploreAllSD {
 		vHubLandingPage.clickExploreAllTopPartners();
 	}
 
-	@Then("the system should apply the Top Partners filter")
+	@Then("the system should visible the Top Partners lable not the Filter title")
 	public void the_system_should_apply_the_top_partners_filter() {
 		vHubLandingPage.topPartnersLabel();
 	}

@@ -44,7 +44,7 @@ public class VHubMySubscriptions {
 	        } else if (isElementVisible(assetName, shortWait)) {
 	            String actualText = driver.findElement(assetName).getText().trim();
 	            Assert.assertEquals(actualText, expectedText, "Incorrect text on subscription table.");
-	            System.out.println("Asset table found and verified.");
+//	            System.out.println("Asset table found and verified.");
 	        } else {
 	            Assert.fail("Neither Explore Assets button nor Asset Table found.");
 	        }
