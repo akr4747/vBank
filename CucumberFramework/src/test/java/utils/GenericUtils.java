@@ -81,5 +81,19 @@ public class GenericUtils {
 	        Assert.fail("'Filter panel' is not visible.");
 	    }
 	}
+	
+	public void waitForDOMToStabilize(int stableDurationSec) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		String script = "return document.readyState";
+		long end = System.currentTimeMillis() + stableDurationSec * 1000;
+		while (System.currentTimeMillis() < end) {
+			String state = (String) js.executeScript(script);
+			if (!"complete".equals(state)) {
+				end = System.currentTimeMillis() + stableDurationSec * 1000; // reset timer if still loading
+			}
+		}
+	}
+	
+	
 
 }

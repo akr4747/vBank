@@ -1,8 +1,11 @@
 package pageObjects;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.io.File;
 import java.time.Duration;
 import java.util.List;
-import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,6 +13,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -54,6 +58,8 @@ public class APIAssetDetailPage {
 	private By apiAssetName=By.xpath("//div[@class='details']//h2");
 	
 	private By apiSubscibed=By.xpath("//span[text()='Subscribed']");
+	
+	private By toastmsg=By.xpath("//div[@class='cdk-overlay-container']/div");
 
 	public void apiSubscriptionBySwagger() {
 	    List<WebElement> subscribedElements = driver.findElements(apiSubscibed);
@@ -101,7 +107,6 @@ public class APIAssetDetailPage {
 	}
 
 
-
 	public void clickapiAboutTab() {
 		apiAboutTab.click();
 	}
@@ -125,5 +130,45 @@ public class APIAssetDetailPage {
 	public void clickapiSupportTab() {
 		wait.until(ExpectedConditions.elementToBeClickable(apisupportTab)).click();
 	}
+	
+	public void apiPostmanJSONDownload() throws AWTException {
+		  List<WebElement> subscribedElements = driver.findElements(apiSubscibed);
 
+		    // If "Subscribed" chip is already visible
+	      if (!subscribedElements.isEmpty() && subscribedElements.get(0).isDisplayed()) {
+		        String actualText = subscribedElements.get(0).getText().trim();
+		        Assert.assertEquals(actualText, "Subscribed", "API already subscribed");
+		        
+		        wait.until(ExpectedConditions.elementToBeClickable(apiExperienceForFree)).click();
+		        wait.until(ExpectedConditions.elementToBeClickable(apiExperienceOnPostman)).click();
+		        
+		        wait.until(ExpectedConditions.visibilityOfElementLocated(toastmsg));
+		        String actualMsg=driver.findElement(toastmsg).getText().trim();
+		        String cleanedToastMsg=actualMsg.split("OK")[0].trim();
+		        Assert.assertEquals("JSON file generated. Download started.", cleanedToastMsg);
+		        
+		        wait.until(ExpectedConditions.invisibilityOfElementLocated(toastmsg));
+		      
+		        Robot robot = new Robot();
+
+		        // Simulate pressing ENTER key to accept the Save As dialog
+		        robot.keyPress(KeyEvent.VK_ENTER);
+		        robot.keyRelease(KeyEvent.VK_ENTER); 
+		        
+		  
+		        
+		        
+		    } else {
+		        // Not subscribed – click through Postman flow
+		      wait.until(ExpectedConditions.elementToBeClickable(apiExperienceForFree)).click();
+		      wait.until(ExpectedConditions.elementToBeClickable(apiExperienceOnPostman)).click();
+
+		        // Verify the "Subscribed" label is now visible
+		        WebElement subscribed = wait.until(ExpectedConditions.visibilityOfElementLocated(apiSubscibed));
+		        Assert.assertEquals(subscribed.getText().trim(), "Subscribed", "API subscription failed");
+
+		    }
+	}
+	
+	
 }

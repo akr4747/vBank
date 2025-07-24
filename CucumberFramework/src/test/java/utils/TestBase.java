@@ -46,6 +46,7 @@ public class TestBase {
 				prefs.put("credentials_enable_service", false);
 				prefs.put("profile.password_manager_enabled", false);
 				chromeoption.setExperimentalOption("prefs", prefs);
+				prefs.put("download.prompt_for_download", false);
 
 				// ✅ Use a fresh profile
 				chromeoption.addArguments("--guest"); // OR use below for temp profile

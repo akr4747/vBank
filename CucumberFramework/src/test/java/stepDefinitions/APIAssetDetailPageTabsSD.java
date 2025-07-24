@@ -6,7 +6,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.APIAssetDetailPage;
-import pageObjects.VHubAssetDetailPage;
 import pageObjects.VHubLandingPage;
 import utils.TestContextSetup;
 import utils.TestData;
@@ -14,7 +13,6 @@ import utils.TestData;
 public class APIAssetDetailPageTabsSD {
 	
 	TestContextSetup testContextSetup;
-	VHubAssetDetailPage vHubAssetDetailPage;
 	VHubLandingPage vHubLandingPage;
 	APIAssetDetailPage apiAssetDetailPage;
 	WebDriverWait wait;

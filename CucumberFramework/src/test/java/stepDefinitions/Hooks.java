@@ -27,7 +27,7 @@ public class Hooks {
 
 		testContextSetup.testBase.WebDriverManager().quit();
 
-	}
+	} 
 
 	@AfterStep
 	public void AddScreenshot(Scenario scenario) throws IOException, InterruptedException {

@@ -13,8 +13,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import io.netty.handler.timeout.TimeoutException;
-
 public class VHubAssetDetailPage {
 
 	public WebDriver driver;

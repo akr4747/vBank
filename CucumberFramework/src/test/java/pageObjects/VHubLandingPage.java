@@ -5,7 +5,6 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -46,10 +45,6 @@ public class VHubLandingPage extends GenericUtils{
 
 	@FindBy(xpath = "//input[@type='search']")
 	private WebElement searchBox;
-	
-	private By clickOnvConsentCard = By.xpath("//div[@title='vConsent']");
-
-	private By clickOnAPICard=By.xpath("(//div[@class='mktplc-card_header-title tite-pos'])[1]");
 	
 	@FindBy(xpath = "//span[text()='Explore Use Cases']")
 	private WebElement explore_Use_Case;
@@ -199,6 +194,10 @@ public class VHubLandingPage extends GenericUtils{
 
 	public void waitForTopUseCasesVisible() {
 	    wait.until(ExpectedConditions.visibilityOf(title_Top_Use_Cases));
+		String actualMessage = title_Top_Use_Cases.getText().trim();
+		String cleanedText = actualMessage.split("Sort By")[0].trim();
+		org.testng.Assert.assertEquals(cleanedText, "Top Use Cases", "Unable to explore Top Use Cases");
+		
 	}
 
 	// --------- Navigation Links ---------
@@ -318,7 +317,8 @@ public class VHubLandingPage extends GenericUtils{
 	public void topUseCasesLabel() {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(topUseCasesText));
         String actualText = driver.findElement(topUseCasesText).getText().trim();
-        Assert.assertEquals(actualText, "Top Use Cases", "Top Use Cases Label text mismatch.");
+        String cleanedText = actualText.split("Sort By")[0].trim();
+        Assert.assertEquals(cleanedText, "Top Use Cases", "Top Use Cases Label text mismatch.");
         
         utils.assertFormTitleNotVisible(filterTitle); // Filter title should not be visible
 	}
@@ -332,6 +332,4 @@ public class VHubLandingPage extends GenericUtils{
 	    
 	    utils.assertFormTitleNotVisible(filterTitle); // Filter title should not be visible
 	}
-
-
 }
