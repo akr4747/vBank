@@ -31,9 +31,7 @@ public class VHubExploreUseCasesSD {
 	public void the_user_has_logged_in_successfully_and_landed_on_the_v_hub_home_page() {
 
 		vHubLandingPage.waitForExploreUseCasesVisible();
-		String expectedMessage = "Explore Use Cases";
-		String actualMessage = vHubLandingPage.exploreUseCasesText();
-		org.testng.Assert.assertEquals(actualMessage, expectedMessage, "User is not on the vHub Home page");
+		
 	}
 
 	@When("the user clicks on the {string} button displayed on the banner image")

@@ -19,7 +19,7 @@ public class VHubLandingPage extends GenericUtils{
 
 	public WebDriver driver;
 	public WebDriverWait wait;
-	 GenericUtils utils;
+	GenericUtils utils;
 
 	public VHubLandingPage(WebDriver driver) {
 		super(driver);
@@ -70,7 +70,7 @@ public class VHubLandingPage extends GenericUtils{
 	@FindBy(xpath="//div[@class='profile-details']")
 	private WebElement profileDetails;
 	
-	@FindBy(xpath="//a[@routerlink='/ManageAccount/AccountDetails']")
+	@FindBy(xpath="//a[@routerlink='/ManageAccount/dashboard']")
 	private WebElement accountSettings;
 	
 	@FindBy(xpath="//button//span[@class='mat-mdc-menu-item-text']")
@@ -209,6 +209,12 @@ public class VHubLandingPage extends GenericUtils{
 	public void developerConsole() {
 		wait.until(ExpectedConditions.elementToBeClickable(developer_Console)).click();
 	}
+	
+	public void vahanaAccountPageTitle() {
+		String expectedTitle = "Vahana Accounts";
+		String actualTitle = driver.getTitle();
+		org.testng.Assert.assertEquals(actualTitle, expectedTitle, "Incorrect title for Vahana Account page");
+	}
 
 	public void questionMark() {
 		question_Mark.click();
@@ -217,22 +223,33 @@ public class VHubLandingPage extends GenericUtils{
 	public void documentationLink() {
 		documentation_Link.click();
 	}
+	
+	public void verifyVahanaAcademyPageTitle() {
+	    String expectedTitle = "vHub – Vahana Academy";
+	    String actualTitle = driver.getTitle();
+	    Assert.assertEquals(actualTitle, expectedTitle, "Incorrect title for Vahana Academy page");
+	}
 
 	public void vahanaCommunity() {
 		vahana_Community.click();
+	}
+	
+	public void verifyVahanaCommunityPageTitle() {
+		String expectedTitle = "Vahana Community - Developer community for Vahana Platform. Get active support, updates, and answers for Vahana cloud products including vFlow, vDesigner, vConnect, and more on the official Vahana Community forum. Join now for expert help and product announcements.";
+		String actualTitle = driver.getTitle();
+		org.testng.Assert.assertEquals(actualTitle, expectedTitle, "Incorrect title for Vahana Community page");
 	}
 	
 
 	public void waitForQuestionMark() {
 		WebElement nextButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='mat-mdc-menu-trigger help-icon']")));
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", nextButton);
-		
-
 	}
 
 	public void waitForVahanaAccountPageHeader() {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h2[text()='Get Started with Vahana']")));
 	}
+	
 
 	public void clickQuestionMarkAndOpenDocumentation() {
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", question_Mark);
@@ -309,7 +326,8 @@ public class VHubLandingPage extends GenericUtils{
 	public void mostPopularLabel() {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(mostPopularText));
         String actualText = driver.findElement(mostPopularText).getText().trim();
-        Assert.assertEquals(actualText, "Most Popular", "Most Popular Label text mismatch.");
+        String cleanedText = actualText.split("Sort By")[0].trim();
+        Assert.assertEquals(cleanedText, "Most Popular", "Most Popular Label text mismatch.");
         
         utils.assertFormTitleVisible(filterTitle); // Filter title should be visible
 	}

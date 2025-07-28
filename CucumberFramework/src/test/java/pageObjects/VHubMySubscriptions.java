@@ -1568,8 +1568,7 @@ public class VHubMySubscriptions {
 			} else {
 
 				try {
-					WebElement noResult = shortWait.until(ExpectedConditions
-							.visibilityOfElementLocated(By.xpath("//div[@class='empty-content']/h2")));
+					WebElement noResult = shortWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='empty-content']/h2")));
 					String msg = noResult.getText().trim();
 					Assert.assertEquals(msg, "No Results Found", "Expected 'No Results Found' not shown.");
 				} catch (TimeoutException e) {

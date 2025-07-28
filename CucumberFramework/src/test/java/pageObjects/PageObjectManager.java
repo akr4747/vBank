@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 import stepDefinitions.VHubExploreUseCasesSD;
 
+
 public class PageObjectManager {
 
 	public VHubLandingPage vHubLandingPage;
@@ -15,6 +16,7 @@ public class PageObjectManager {
 	public VHubAccountDetails vHubAccountDetails;
 	public VHubMySubscriptions vHubMySubscriptions;
 	public APIAssetDetailPage apiAssetDetailPage;
+	public VHubFooter vHubFooter;
 
 	public WebDriver driver;
 
@@ -66,6 +68,11 @@ public class PageObjectManager {
 	public APIAssetDetailPage getapiAssetDetailPage() {
 		apiAssetDetailPage =new APIAssetDetailPage(driver);
 		return apiAssetDetailPage;
+	}
+
+	public VHubFooter getVHubFooter() {
+		vHubFooter=new VHubFooter(driver);
+		return vHubFooter;
 	}
 
 
