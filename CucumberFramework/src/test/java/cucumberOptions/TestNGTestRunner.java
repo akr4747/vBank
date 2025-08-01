@@ -21,9 +21,7 @@ public class TestNGTestRunner extends AbstractTestNGCucumberTests{
 	{
 		return super.scenarios();
 	} */
-	
 // To Run the specific test cases multiple time	
-	
 	 @Test(dataProvider = "scenarios")
 	    public void runScenario(PickleWrapper pickle, FeatureWrapper feature) {
 	        boolean isRepeatScenario = pickle.getPickle().getTags().contains("@repeat");

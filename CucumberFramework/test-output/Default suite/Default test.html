@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>44/3/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>42/5/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Jul 28 00:54:04 IST 2025</td>
+<td>Started on:</td><td>Fri Aug 01 11:42:07 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>557 seconds (557750 ms)</td>
+<tr><td>Total time:</td><td>587 seconds (587162 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,42 +75,36 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Submit Request Credits for Live Status - Credit Expired", "Optional[Verify My Subscription functionality]"</td>
-<td><div><pre>java.lang.AssertionError: Exception occurred while processing Explore Assets or Live Status logic: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class=&apos;popup-header&apos;]/h5[normalize-space()=&apos;Request Submitted&apos;] (tried for 5 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.1.1&apos;, revision: &apos;e8fcc2cecf&apos;
-System info: host: &apos;DEC1128&apos;, ip: &apos;192.168.0.20&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.14&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.69, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\AKSHAY~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50722}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50722/devtoo..., se:cdpVersion: 137.0.7151.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 4709210a227da900e4fec45566f5754d
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify YouTube link under Our Social Media", "Optional[Verify Footer Links on vHub]"</td>
+<td><div><pre>java.lang.AssertionError: Youtube URL is incorrect: https://youtube.com/@decimaltech?si=hTpSu0lDUN0dSjfQ expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:99)
-	at pageObjects.VHubMySubscriptions.clickOnCreditExpiredRequestCredit(VHubMySubscriptions.java:1069)
-	at stepDefinitions.VHubMySubscriptionsSD.the_user_applies_the_credit_expired_filter_and_submits_a_request_for_credits(VHubMySubscriptionsSD.java:105)
-	at ✽.the user applies the Credit Expired filter and submits a Request for Credits(file:///C:/Users/Akshay%20rajput/Downloads/CucumberFramework/CucumberFramework/src/test/java/features/VHubMySubscriptions.feature:57)
-</pre></div><a href='#' onClick='toggleBox("stack-trace204544787", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace204544787'><pre>java.lang.AssertionError: Exception occurred while processing Explore Assets or Live Status logic: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class=&apos;popup-header&apos;]/h5[normalize-space()=&apos;Request Submitted&apos;] (tried for 5 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.1.1&apos;, revision: &apos;e8fcc2cecf&apos;
-System info: host: &apos;DEC1128&apos;, ip: &apos;192.168.0.20&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.14&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.69, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\AKSHAY~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50722}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50722/devtoo..., se:cdpVersion: 137.0.7151.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 4709210a227da900e4fec45566f5754d
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertTrue(Assert.java:45)
+	at pageObjects.VHubFooter.verifyYouTubeLink(VHubFooter.java:141)
+	at stepDefinitions.VHubFooterSD.the_system_should_navigate_to_the_you_tube_page(VHubFooterSD.java:132)
+	at ✽.the system should navigate to the YouTube page(file:///C:/Users/Akshay%20rajput/Downloads/CucumberFramework/CucumberFramework/src/test/java/features/VHubFooter.feature:49)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1807529631", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1807529631'><pre>java.lang.AssertionError: Youtube URL is incorrect: https://youtube.com/@decimaltech?si=hTpSu0lDUN0dSjfQ expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:99)
-	at pageObjects.VHubMySubscriptions.clickOnCreditExpiredRequestCredit(VHubMySubscriptions.java:1069)
-	at stepDefinitions.VHubMySubscriptionsSD.the_user_applies_the_credit_expired_filter_and_submits_a_request_for_credits(VHubMySubscriptionsSD.java:105)
-	at ✽.the user applies the Credit Expired filter and submits a Request for Credits(file:///C:/Users/Akshay%20rajput/Downloads/CucumberFramework/CucumberFramework/src/test/java/features/VHubMySubscriptions.feature:57)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertTrue(Assert.java:45)
+	at pageObjects.VHubFooter.verifyYouTubeLink(VHubFooter.java:141)
+	at stepDefinitions.VHubFooterSD.the_system_should_navigate_to_the_you_tube_page(VHubFooterSD.java:132)
+	at ✽.the system should navigate to the YouTube page(file:///C:/Users/Akshay%20rajput/Downloads/CucumberFramework/CucumberFramework/src/test/java/features/VHubFooter.feature:49)
 </pre></div></td>
-<td>20</td>
+<td>5</td>
 <td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
 <tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify Fill all required fields and publish the app to Sandbox.", "Optional[Verify Publish app to Sandbox successfully.]"</td>
-<td><div><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "User should be able to download Postman JSON from the Asset Detail page", "Optional[API Asset Detail - Postman Collection Download]"</td>
+<td><div><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
   (Session info: chrome=137.0.7151.69)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
 Build info: version: &apos;4.1.1&apos;, revision: &apos;e8fcc2cecf&apos;
-System info: host: &apos;DEC1128&apos;, ip: &apos;192.168.0.20&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.14&apos;
+System info: host: &apos;DEC1128&apos;, ip: &apos;192.168.1.23&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.14&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a6881e75829d0a38f796ede56ffa1837, sendKeysToElement {id=f.394473ED73F70EFB341D7C8D5BF1D433.d.070512B6967B0691E8B658215F79BBC1.e.153, value=[Ljava.lang.CharSequence;@2a11ae0b}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.69, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\AKSHAY~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49613}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49613/devtoo..., se:cdpVersion: 137.0.7151.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [org.openqa.selenium.remote.RemoteWebElement@20390a46 -&gt; unknown locator]
-Session ID: a6881e75829d0a38f796ede56ffa1837
+Command: [267865c1e5db2e1e68338364f25ca0a2, executeScript {script=arguments[0].click();, args=[{ELEMENT=f.B7BCE58A5C2F1261DDC994355761A90D.d.877E84F445D33913DC3C7DE5CE988636.e.72, element-6066-11e4-a52e-4f735466cecf=f.B7BCE58A5C2F1261DDC994355761A90D.d.877E84F445D33913DC3C7DE5CE988636.e.72}]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.69, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\AKSHAY~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53079}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53079/devtoo..., se:cdpVersion: 137.0.7151.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 267865c1e5db2e1e68338364f25ca0a2
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -123,20 +117,20 @@ Session ID: a6881e75829d0a38f796ede56ffa1837
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
-	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:107)
-	at stepDefinitions.VBankPublishAppSD.fill_all_the_required_field_of_app_setting_page(VBankPublishAppSD.java:82)
-	at ✽.Fill all the required field of App setting page(file:///C:/Users/Akshay%20rajput/Downloads/CucumberFramework/CucumberFramework/src/test/java/features/VBankPublishApp.feature:7)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1235247239", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1235247239'><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:477)
+	at pageObjects.VHubLandingPage.click_On_API_Card(VHubLandingPage.java:162)
+	at stepDefinitions.PostmanJsonSD.the_user_searches_for_a_specific_api_and_navigates_to_its_asset_detail_page(PostmanJsonSD.java:41)
+	at ✽.the user searches for a specific API and navigates to its Asset Detail page(file:///C:/Users/Akshay%20rajput/Downloads/CucumberFramework/CucumberFramework/src/test/java/features/PostmanJSON.feature:6)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1389056701", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1389056701'><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
   (Session info: chrome=137.0.7151.69)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
 Build info: version: &apos;4.1.1&apos;, revision: &apos;e8fcc2cecf&apos;
-System info: host: &apos;DEC1128&apos;, ip: &apos;192.168.0.20&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.14&apos;
+System info: host: &apos;DEC1128&apos;, ip: &apos;192.168.1.23&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.14&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a6881e75829d0a38f796ede56ffa1837, sendKeysToElement {id=f.394473ED73F70EFB341D7C8D5BF1D433.d.070512B6967B0691E8B658215F79BBC1.e.153, value=[Ljava.lang.CharSequence;@2a11ae0b}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.69, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\AKSHAY~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49613}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49613/devtoo..., se:cdpVersion: 137.0.7151.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [org.openqa.selenium.remote.RemoteWebElement@20390a46 -&gt; unknown locator]
-Session ID: a6881e75829d0a38f796ede56ffa1837
+Command: [267865c1e5db2e1e68338364f25ca0a2, executeScript {script=arguments[0].click();, args=[{ELEMENT=f.B7BCE58A5C2F1261DDC994355761A90D.d.877E84F445D33913DC3C7DE5CE988636.e.72, element-6066-11e4-a52e-4f735466cecf=f.B7BCE58A5C2F1261DDC994355761A90D.d.877E84F445D33913DC3C7DE5CE988636.e.72}]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.69, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\AKSHAY~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53079}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53079/devtoo..., se:cdpVersion: 137.0.7151.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 267865c1e5db2e1e68338364f25ca0a2
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -149,12 +143,12 @@ Session ID: a6881e75829d0a38f796ede56ffa1837
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:251)
-	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:107)
-	at stepDefinitions.VBankPublishAppSD.fill_all_the_required_field_of_app_setting_page(VBankPublishAppSD.java:82)
-	at ✽.Fill all the required field of App setting page(file:///C:/Users/Akshay%20rajput/Downloads/CucumberFramework/CucumberFramework/src/test/java/features/VBankPublishApp.feature:7)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:477)
+	at pageObjects.VHubLandingPage.click_On_API_Card(VHubLandingPage.java:162)
+	at stepDefinitions.PostmanJsonSD.the_user_searches_for_a_specific_api_and_navigates_to_its_asset_detail_page(PostmanJsonSD.java:41)
+	at ✽.the user searches for a specific API and navigates to its Asset Detail page(file:///C:/Users/Akshay%20rajput/Downloads/CucumberFramework/CucumberFramework/src/test/java/features/PostmanJSON.feature:6)
 </pre></div></td>
-<td>7</td>
+<td>5</td>
 <td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
 <tr>
 <td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify publishing a sandbox app with all consent languages using Rich HTML text", "Optional[Verify Publish app to Sandbox successfully.]"</td>
@@ -162,11 +156,11 @@ Session ID: a6881e75829d0a38f796ede56ffa1837
   (Session info: chrome=137.0.7151.69)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
 Build info: version: &apos;4.1.1&apos;, revision: &apos;e8fcc2cecf&apos;
-System info: host: &apos;DEC1128&apos;, ip: &apos;192.168.0.20&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.14&apos;
+System info: host: &apos;DEC1128&apos;, ip: &apos;192.168.1.23&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.14&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [52a36f74222bb0dc72c58c3772a9cedd, executeScript {script=arguments[0].click();, args=[{ELEMENT=f.E19CFB96DD547A43E5F055573AE84E80.d.71CC7404DD73EA20638A2FF0D58A9356.e.324, element-6066-11e4-a52e-4f735466cecf=f.E19CFB96DD547A43E5F055573AE84E80.d.71CC7404DD73EA20638A2FF0D58A9356.e.324}]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.69, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\AKSHAY~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49640}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49640/devtoo..., se:cdpVersion: 137.0.7151.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 52a36f74222bb0dc72c58c3772a9cedd
+Command: [b8e0b756be8579c287279378ae4fc818, executeScript {script=arguments[0].click();, args=[{ELEMENT=f.4D83CC14C64185571E1E4224A92146FD.d.6D6C7499971AEF25030D8894A85DAE56.e.418, element-6066-11e4-a52e-4f735466cecf=f.4D83CC14C64185571E1E4224A92146FD.d.6D6C7499971AEF25030D8894A85DAE56.e.418}]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.69, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\AKSHAY~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53199}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53199/devtoo..., se:cdpVersion: 137.0.7151.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b8e0b756be8579c287279378ae4fc818
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -180,19 +174,19 @@ Session ID: 52a36f74222bb0dc72c58c3772a9cedd
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
 	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:477)
-	at pageObjects.VBankConsentConfiguration.selectConsentType6(VBankConsentConfiguration.java:398)
-	at stepDefinitions.VBankPublishAppSD.the_user_fills_in_all_required_fields_on_the_consent_configuration_page_with_consent_notice_text_in_each_selected_language_using_rich_html(VBankPublishAppSD.java:228)
+	at pageObjects.VBankConsentConfiguration.selectConsentType15(VBankConsentConfiguration.java:625)
+	at stepDefinitions.VBankPublishAppSD.the_user_fills_in_all_required_fields_on_the_consent_configuration_page_with_consent_notice_text_in_each_selected_language_using_rich_html(VBankPublishAppSD.java:264)
 	at ✽.the user fills in all required fields on the Consent Configuration page with consent notice text in each selected language using Rich HTML(file:///C:/Users/Akshay%20rajput/Downloads/CucumberFramework/CucumberFramework/src/test/java/features/VBankPublishApp.feature:22)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1143171370", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1143171370'><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+</pre></div><a href='#' onClick='toggleBox("stack-trace623950582", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace623950582'><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
   (Session info: chrome=137.0.7151.69)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
 Build info: version: &apos;4.1.1&apos;, revision: &apos;e8fcc2cecf&apos;
-System info: host: &apos;DEC1128&apos;, ip: &apos;192.168.0.20&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.14&apos;
+System info: host: &apos;DEC1128&apos;, ip: &apos;192.168.1.23&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.14&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [52a36f74222bb0dc72c58c3772a9cedd, executeScript {script=arguments[0].click();, args=[{ELEMENT=f.E19CFB96DD547A43E5F055573AE84E80.d.71CC7404DD73EA20638A2FF0D58A9356.e.324, element-6066-11e4-a52e-4f735466cecf=f.E19CFB96DD547A43E5F055573AE84E80.d.71CC7404DD73EA20638A2FF0D58A9356.e.324}]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.69, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\AKSHAY~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49640}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49640/devtoo..., se:cdpVersion: 137.0.7151.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 52a36f74222bb0dc72c58c3772a9cedd
+Command: [b8e0b756be8579c287279378ae4fc818, executeScript {script=arguments[0].click();, args=[{ELEMENT=f.4D83CC14C64185571E1E4224A92146FD.d.6D6C7499971AEF25030D8894A85DAE56.e.418, element-6066-11e4-a52e-4f735466cecf=f.4D83CC14C64185571E1E4224A92146FD.d.6D6C7499971AEF25030D8894A85DAE56.e.418}]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.69, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\AKSHAY~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53199}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53199/devtoo..., se:cdpVersion: 137.0.7151.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b8e0b756be8579c287279378ae4fc818
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -206,11 +200,63 @@ Session ID: 52a36f74222bb0dc72c58c3772a9cedd
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
 	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:477)
-	at pageObjects.VBankConsentConfiguration.selectConsentType6(VBankConsentConfiguration.java:398)
-	at stepDefinitions.VBankPublishAppSD.the_user_fills_in_all_required_fields_on_the_consent_configuration_page_with_consent_notice_text_in_each_selected_language_using_rich_html(VBankPublishAppSD.java:228)
+	at pageObjects.VBankConsentConfiguration.selectConsentType15(VBankConsentConfiguration.java:625)
+	at stepDefinitions.VBankPublishAppSD.the_user_fills_in_all_required_fields_on_the_consent_configuration_page_with_consent_notice_text_in_each_selected_language_using_rich_html(VBankPublishAppSD.java:264)
 	at ✽.the user fills in all required fields on the Consent Configuration page with consent notice text in each selected language using Rich HTML(file:///C:/Users/Akshay%20rajput/Downloads/CucumberFramework/CucumberFramework/src/test/java/features/VBankPublishApp.feature:22)
 </pre></div></td>
-<td>27</td>
+<td>61</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Submit Request Production for Live Status - Service Down", "Optional[Verify My Subscription functionality]"</td>
+<td><div><pre>java.lang.AssertionError: Exception occurred while processing Explore Assets or Live Status logic: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class=&apos;popup-header&apos;]/h5[normalize-space()=&apos;Request Submitted&apos;] (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.1.1&apos;, revision: &apos;e8fcc2cecf&apos;
+System info: host: &apos;DEC1128&apos;, ip: &apos;192.168.1.23&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.14&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.69, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\AKSHAY~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54831}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:54831/devtoo..., se:cdpVersion: 137.0.7151.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: be156cd122ce8e1d706e6369c671d780
+	at org.testng.Assert.fail(Assert.java:99)
+	at pageObjects.VHubMySubscriptions.clickOnseriveDownRequestProduction(VHubMySubscriptions.java:844)
+	at stepDefinitions.VHubMySubscriptionsSD.the_user_applies_the_service_down_filter_and_submits_a_request_for_production(VHubMySubscriptionsSD.java:85)
+	at ✽.the user applies the Service Down filter and submits a Request for Production(file:///C:/Users/Akshay%20rajput/Downloads/CucumberFramework/CucumberFramework/src/test/java/features/VHubMySubscriptions.feature:42)
+</pre></div><a href='#' onClick='toggleBox("stack-trace660555427", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace660555427'><pre>java.lang.AssertionError: Exception occurred while processing Explore Assets or Live Status logic: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class=&apos;popup-header&apos;]/h5[normalize-space()=&apos;Request Submitted&apos;] (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.1.1&apos;, revision: &apos;e8fcc2cecf&apos;
+System info: host: &apos;DEC1128&apos;, ip: &apos;192.168.1.23&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.14&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.69, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\AKSHAY~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54831}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:54831/devtoo..., se:cdpVersion: 137.0.7151.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: be156cd122ce8e1d706e6369c671d780
+	at org.testng.Assert.fail(Assert.java:99)
+	at pageObjects.VHubMySubscriptions.clickOnseriveDownRequestProduction(VHubMySubscriptions.java:844)
+	at stepDefinitions.VHubMySubscriptionsSD.the_user_applies_the_service_down_filter_and_submits_a_request_for_production(VHubMySubscriptionsSD.java:85)
+	at ✽.the user applies the Service Down filter and submits a Request for Production(file:///C:/Users/Akshay%20rajput/Downloads/CucumberFramework/CucumberFramework/src/test/java/features/VHubMySubscriptions.feature:42)
+</pre></div></td>
+<td>20</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Submit Request Production for Live Status - Service Up", "Optional[Verify My Subscription functionality]"</td>
+<td><div><pre>java.lang.AssertionError: Exception occurred while processing Explore Assets or Live Status logic: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class=&apos;popup-header&apos;]/h5[normalize-space()=&apos;Request Submitted&apos;] (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.1.1&apos;, revision: &apos;e8fcc2cecf&apos;
+System info: host: &apos;DEC1128&apos;, ip: &apos;192.168.1.23&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.14&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.69, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\AKSHAY~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54526}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:54526/devtoo..., se:cdpVersion: 137.0.7151.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 52873ddd369192fbe30d02a5de7e55ee
+	at org.testng.Assert.fail(Assert.java:99)
+	at pageObjects.VHubMySubscriptions.clickOnseriveUpRequestProduction(VHubMySubscriptions.java:494)
+	at stepDefinitions.VHubMySubscriptionsSD.the_user_applies_the_service_up_filter_and_submits_a_request_for_production(VHubMySubscriptionsSD.java:58)
+	at ✽.the user applies the Service Up filter and submits a Request for Production(file:///C:/Users/Akshay%20rajput/Downloads/CucumberFramework/CucumberFramework/src/test/java/features/VHubMySubscriptions.feature:21)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1909178324", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1909178324'><pre>java.lang.AssertionError: Exception occurred while processing Explore Assets or Live Status logic: Expected condition failed: waiting for visibility of element located by By.xpath: //div[@class=&apos;popup-header&apos;]/h5[normalize-space()=&apos;Request Submitted&apos;] (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.1.1&apos;, revision: &apos;e8fcc2cecf&apos;
+System info: host: &apos;DEC1128&apos;, ip: &apos;192.168.1.23&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.14&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.69, chrome: {chromedriverVersion: 137.0.7151.68 (2989ffee9373..., userDataDir: C:\Users\AKSHAY~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54526}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:54526/devtoo..., se:cdpVersion: 137.0.7151.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 52873ddd369192fbe30d02a5de7e55ee
+	at org.testng.Assert.fail(Assert.java:99)
+	at pageObjects.VHubMySubscriptions.clickOnseriveUpRequestProduction(VHubMySubscriptions.java:494)
+	at stepDefinitions.VHubMySubscriptionsSD.the_user_applies_the_service_up_filter_and_submits_a_request_for_production(VHubMySubscriptionsSD.java:58)
+	at ✽.the user applies the Service Up filter and submits a Request for Production(file:///C:/Users/Akshay%20rajput/Downloads/CucumberFramework/CucumberFramework/src/test/java/features/VHubMySubscriptions.feature:21)
+</pre></div></td>
+<td>20</td>
 <td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
@@ -221,139 +267,9 @@ Session ID: 52a36f74222bb0dc72c58c3772a9cedd
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "View details for Live Status - Service Up", "Optional[Verify My Subscription functionality]"</td>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Submit Request Credits for Live Status - Credit Expired", "Optional[Verify My Subscription functionality]"</td>
 <td></td>
-<td>16</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Navigate to the Runtime Sandbox environment via Access to Sandbox button", "Optional[Verify Navigation from Control Plane to Runtime Environment]"</td>
-<td></td>
-<td>7</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify Decimal Technologies link under Quick Links", "Optional[Verify Footer Links on vHub]"</td>
-<td></td>
-<td>7</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "View details for Live Status - Service Down", "Optional[Verify My Subscription functionality]"</td>
-<td></td>
-<td>15</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify the Featured Explore All Assets", "Optional[Verify Explore All functionality on vHub]"</td>
-<td></td>
-<td>5</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify Search Experience for Asset type App on home page", "Optional[Verify navigate to vHub Landing page and search the Asset from search bar.]"</td>
-<td></td>
-<td>5</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify Vahana Hub Support link under Help and Support", "Optional[Verify Footer Links on vHub]"</td>
-<td></td>
-<td>5</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify YouTube link under Our Social Media", "Optional[Verify Footer Links on vHub]"</td>
-<td></td>
-<td>9</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify the Top Partners Explore All Assets", "Optional[Verify Explore All functionality on vHub]"</td>
-<td></td>
-<td>15</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Navigate to the Runtime Production environment via Access to Production button", "Optional[Verify Navigation from Control Plane to Runtime Environment]"</td>
-<td></td>
-<td>7</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Submit Request Support for Live Status - Deprecated", "Optional[Verify My Subscription functionality]"</td>
-<td></td>
-<td>18</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify Vahana Cloud link under Quick Links", "Optional[Verify Footer Links on vHub]"</td>
-<td></td>
-<td>8</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify Navigate to Top Use Cases from the banner image.", "Optional[Verify Explore Top Use Cases from Banner.]"</td>
-<td></td>
-<td>4</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify Become a Partner link in the footer", "Optional[Verify Footer Links on vHub]"</td>
-<td></td>
-<td>4</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify Vahana Community link under Help and Support", "Optional[Verify Footer Links on vHub]"</td>
-<td></td>
-<td>8</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "View details for Live Status - Credit Expired", "Optional[Verify My Subscription functionality]"</td>
-<td></td>
-<td>15</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Submit Request Production for Live Status - Credit Expired", "Optional[Verify My Subscription functionality]"</td>
-<td></td>
-<td>18</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify that the user can successfully subscribe to an API by Postman", "Optional[API Subscription Functionality]"</td>
-<td></td>
-<td>4</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "User successfully logs out from vBank", "Optional[Verify user logout functionality from vHub and vBank]"</td>
-<td></td>
-<td>7</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify LinkedIn link under Our Social Media", "Optional[Verify Footer Links on vHub]"</td>
-<td></td>
-<td>8</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "User should be able to download Postman JSON from the Asset Detail page", "Optional[API Asset Detail - Postman Collection Download]"</td>
-<td></td>
-<td>18</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify the Most Popular Explore All Assets", "Optional[Verify Explore All functionality on vHub]"</td>
-<td></td>
-<td>5</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Submit Request Unsubscribe for Live Status - Service Up", "Optional[Verify My Subscription functionality]"</td>
-<td></td>
-<td>19</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Submit Request Production for Live Status - Service Up", "Optional[Verify My Subscription functionality]"</td>
-<td></td>
-<td>19</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Submit Request Production for Live Status - Service Down", "Optional[Verify My Subscription functionality]"</td>
-<td></td>
-<td>18</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Submit Request Support for Live Status - Service Up", "Optional[Verify My Subscription functionality]"</td>
-<td></td>
-<td>20</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify the Trending Explore All Assets", "Optional[Verify Explore All functionality on vHub]"</td>
-<td></td>
-<td>4</td>
+<td>14</td>
 <td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
 <tr>
 <td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify Vahana Community link opens the Community page.", "Optional[Verify vHub Header Navigation Links]"</td>
@@ -361,9 +277,149 @@ Session ID: 52a36f74222bb0dc72c58c3772a9cedd
 <td>7</td>
 <td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
 <tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify Navigate to Top Use Cases from the banner image.", "Optional[Verify Explore Top Use Cases from Banner.]"</td>
+<td></td>
+<td>5</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify Vahana Cloud link under Quick Links", "Optional[Verify Footer Links on vHub]"</td>
+<td></td>
+<td>8</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
 <td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Submit Request Unsubscribe for Live Status - Credit Expired", "Optional[Verify My Subscription functionality]"</td>
 <td></td>
-<td>19</td>
+<td>14</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify the Trending Explore All Assets", "Optional[Verify Explore All functionality on vHub]"</td>
+<td></td>
+<td>5</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Submit Request Support for Live Status - Service Down", "Optional[Verify My Subscription functionality]"</td>
+<td></td>
+<td>24</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "User successfully logs out from vBank", "Optional[Verify user logout functionality from vHub and vBank]"</td>
+<td></td>
+<td>8</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify the Top Partners Explore All Assets", "Optional[Verify Explore All functionality on vHub]"</td>
+<td></td>
+<td>15</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "View details for Live Status - Credit Expired", "Optional[Verify My Subscription functionality]"</td>
+<td></td>
+<td>14</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify that the user can successfully subscribe to an API by Postman", "Optional[API Subscription Functionality]"</td>
+<td></td>
+<td>7</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify Search Experience for Asset type App on home page", "Optional[Verify navigate to vHub Landing page and search the Asset from search bar.]"</td>
+<td></td>
+<td>4</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify Vahana Hub Support link under Help and Support", "Optional[Verify Footer Links on vHub]"</td>
+<td></td>
+<td>4</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify Documentation link opens the Vahana Academy page.", "Optional[Verify vHub Header Navigation Links]"</td>
+<td></td>
+<td>5</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "View details for Live Status - Service Up", "Optional[Verify My Subscription functionality]"</td>
+<td></td>
+<td>15</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Submit Request Unsubscribe for Live Status - Deprecated", "Optional[Verify My Subscription functionality]"</td>
+<td></td>
+<td>14</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Submit Request Support for Live Status - Deprecated", "Optional[Verify My Subscription functionality]"</td>
+<td></td>
+<td>14</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify the Featured Explore All Assets", "Optional[Verify Explore All functionality on vHub]"</td>
+<td></td>
+<td>10</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Submit Request Production for Live Status - Credit Expired", "Optional[Verify My Subscription functionality]"</td>
+<td></td>
+<td>14</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Submit Request Unsubscribe for Live Status - Service Up", "Optional[Verify My Subscription functionality]"</td>
+<td></td>
+<td>20</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Submit Request Support for Live Status - Credit Expired", "Optional[Verify My Subscription functionality]"</td>
+<td></td>
+<td>15</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "User navigates through all tabs on the App Asset Detail page", "Optional[App Asset Detail Page - Tab Navigation]"</td>
+<td></td>
+<td>6</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "User navigates through all tabs on the API Asset Detail page", "Optional[API Asset Detail Page - Tab Navigation]"</td>
+<td></td>
+<td>14</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify Fill all required fields and publish the app to Sandbox.", "Optional[Verify Publish app to Sandbox successfully.]"</td>
+<td></td>
+<td>11</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify that the user can successfully subscribe to an API by swagger", "Optional[API Subscription Functionality]"</td>
+<td></td>
+<td>7</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "View details for Live Status - Deprecated", "Optional[Verify My Subscription functionality]"</td>
+<td></td>
+<td>14</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify Become a Partner link in the footer", "Optional[Verify Footer Links on vHub]"</td>
+<td></td>
+<td>4</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify LinkedIn link under Our Social Media", "Optional[Verify Footer Links on vHub]"</td>
+<td></td>
+<td>7</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify Vahana Community link under Help and Support", "Optional[Verify Footer Links on vHub]"</td>
+<td></td>
+<td>7</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "View details for Live Status - Service Down", "Optional[Verify My Subscription functionality]"</td>
+<td></td>
+<td>14</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify the Most Popular Explore All Assets", "Optional[Verify Explore All functionality on vHub]"</td>
+<td></td>
+<td>5</td>
 <td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
 <tr>
 <td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify the Top Use Cases Explore All Assets", "Optional[Verify Explore All functionality on vHub]"</td>
@@ -371,29 +427,29 @@ Session ID: 52a36f74222bb0dc72c58c3772a9cedd
 <td>15</td>
 <td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
 <tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify Contact Us link under Quick Links", "Optional[Verify Footer Links on vHub]"</td>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify Developer Console link opens the Vahana Account page.", "Optional[Verify vHub Header Navigation Links]"</td>
+<td></td>
+<td>5</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Navigate to the Runtime Sandbox environment via Access to Sandbox button", "Optional[Verify Navigation from Control Plane to Runtime Environment]"</td>
 <td></td>
 <td>8</td>
 <td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
 <tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Submit Request Support for Live Status - Credit Expired", "Optional[Verify My Subscription functionality]"</td>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Navigate to the Runtime Production environment via Access to Production button", "Optional[Verify Navigation from Control Plane to Runtime Environment]"</td>
 <td></td>
-<td>20</td>
+<td>10</td>
 <td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
 <tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Submit Request Unsubscribe for Live Status - Service Down", "Optional[Verify My Subscription functionality]"</td>
-<td></td>
-<td>18</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify Developer Console link opens the Vahana Account page.", "Optional[Verify vHub Header Navigation Links]"</td>
-<td></td>
-<td>6</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify that the user can successfully subscribe to an API by swagger", "Optional[API Subscription Functionality]"</td>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify Documentation link under Help and Support", "Optional[Verify Footer Links on vHub]"</td>
 <td></td>
 <td>5</td>
+<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
+<tr>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify Decimal Technologies link under Quick Links", "Optional[Verify Footer Links on vHub]"</td>
+<td></td>
+<td>13</td>
 <td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
 <tr>
 <td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Veirfy Successfully navigate to vBank Landing Page after login", "Optional[Verify navigate to vBank Landing Page successfully.]"</td>
@@ -401,44 +457,24 @@ Session ID: 52a36f74222bb0dc72c58c3772a9cedd
 <td>6</td>
 <td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
 <tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify Documentation link under Help and Support", "Optional[Verify Footer Links on vHub]"</td>
-<td></td>
-<td>6</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Submit Request Support for Live Status - Service Down", "Optional[Verify My Subscription functionality]"</td>
-<td></td>
-<td>20</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify Documentation link opens the Vahana Academy page.", "Optional[Verify vHub Header Navigation Links]"</td>
-<td></td>
-<td>6</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
 <td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "User successfully logs out from vHub", "Optional[Verify user logout functionality from vHub and vBank]"</td>
 <td></td>
-<td>5</td>
+<td>7</td>
 <td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
 <tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "View details for Live Status - Deprecated", "Optional[Verify My Subscription functionality]"</td>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Submit Request Unsubscribe for Live Status - Service Down", "Optional[Verify My Subscription functionality]"</td>
 <td></td>
-<td>15</td>
+<td>19</td>
 <td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
 <tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Submit Request Unsubscribe for Live Status - Deprecated", "Optional[Verify My Subscription functionality]"</td>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Submit Request Support for Live Status - Service Up", "Optional[Verify My Subscription functionality]"</td>
 <td></td>
-<td>20</td>
+<td>25</td>
 <td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
 <tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "User navigates through all tabs on the API Asset Detail page", "Optional[API Asset Detail Page - Tab Navigation]"</td>
+<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "Verify Contact Us link under Quick Links", "Optional[Verify Footer Links on vHub]"</td>
 <td></td>
-<td>8</td>
-<td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
-<tr>
-<td title='cucumberOptions.TestNGTestRunner.runScenario()'><b>runScenario</b><br>Test class: cucumberOptions.TestNGTestRunner<br>Parameters: "User navigates through all tabs on the App Asset Detail page", "Optional[App Asset Detail Page - Tab Navigation]"</td>
-<td></td>
-<td>5</td>
+<td>7</td>
 <td>cucumberOptions.TestNGTestRunner@36fc695d</td></tr>
 </table><p>
 </body>

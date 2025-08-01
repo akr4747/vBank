@@ -70,7 +70,7 @@ public class VHubLandingPage extends GenericUtils{
 	@FindBy(xpath="//div[@class='profile-details']")
 	private WebElement profileDetails;
 	
-	@FindBy(xpath="//a[@routerlink='/ManageAccount/dashboard']")
+	@FindBy(xpath="//a[@routerlink='/manage-account/dashboard']")
 	private WebElement accountSettings;
 	
 	@FindBy(xpath="//button//span[@class='mat-mdc-menu-item-text']")
@@ -299,8 +299,6 @@ public class VHubLandingPage extends GenericUtils{
 		scrollAndClick(exploreAllTopPartners);
 	}
 	
-	// 
-	
 	public void exploreUseCaseText() {
 		 wait.until(ExpectedConditions.visibilityOfElementLocated(exploreUseCaseButton));
          String actualText = driver.findElement(exploreUseCaseButton).getText().trim();
@@ -311,7 +309,6 @@ public class VHubLandingPage extends GenericUtils{
 		wait.until(ExpectedConditions.visibilityOfElementLocated(trendingText));
         String actualText = driver.findElement(trendingText).getText().trim();
         Assert.assertEquals(actualText, "Trending", "Trending Label text mismatch.");
-        
         utils.assertFormTitleVisible(filterTitle); // Filter title should be visible
 	}
 	
@@ -319,7 +316,6 @@ public class VHubLandingPage extends GenericUtils{
 		wait.until(ExpectedConditions.visibilityOfElementLocated(featuredText));
         String actualText = driver.findElement(featuredText).getText().trim();
         Assert.assertEquals(actualText, "Featured", "Featured Label text mismatch.");
-        
         utils.assertFormTitleVisible(filterTitle); // Filter title should be visible
 	}
 	
@@ -328,7 +324,6 @@ public class VHubLandingPage extends GenericUtils{
         String actualText = driver.findElement(mostPopularText).getText().trim();
         String cleanedText = actualText.split("Sort By")[0].trim();
         Assert.assertEquals(cleanedText, "Most Popular", "Most Popular Label text mismatch.");
-        
         utils.assertFormTitleVisible(filterTitle); // Filter title should be visible
 	}
 	
@@ -337,17 +332,14 @@ public class VHubLandingPage extends GenericUtils{
         String actualText = driver.findElement(topUseCasesText).getText().trim();
         String cleanedText = actualText.split("Sort By")[0].trim();
         Assert.assertEquals(cleanedText, "Top Use Cases", "Top Use Cases Label text mismatch.");
-        
         utils.assertFormTitleNotVisible(filterTitle); // Filter title should not be visible
 	}
 	
 	public void topPartnersLabel() {
-		
 		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(topPartnersText));
 	    String actualText = element.getText().trim();
 	    String cleanedText = actualText.split("Sort By")[0].trim();
 	    Assert.assertEquals(cleanedText, "Top Partners", "Top Partners label mismatch.");
-	    
 	    utils.assertFormTitleNotVisible(filterTitle); // Filter title should not be visible
 	}
 }

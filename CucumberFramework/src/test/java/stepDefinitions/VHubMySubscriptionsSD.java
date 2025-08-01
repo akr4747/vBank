@@ -6,7 +6,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.VBankLandingPage;
 import pageObjects.VHubMySubscriptions;
-import pageObjects.VHubAccountDetails;
+import pageObjects.VHubDashboard;
 import pageObjects.VHubAssetDetailPage;
 import pageObjects.VHubLandingPage;
 import utils.TestContextSetup;
@@ -15,7 +15,7 @@ public class VHubMySubscriptionsSD {
 
 	TestContextSetup testContextSetup;
 	VHubLandingPage vHubLandingPage;
-	VHubAccountDetails vHubAccountDetails;
+	VHubDashboard vHubAccountDetails;
 	VHubMySubscriptions vHubMySubscriptions;
 	
 	public VHubMySubscriptionsSD(TestContextSetup testContextSetup) {

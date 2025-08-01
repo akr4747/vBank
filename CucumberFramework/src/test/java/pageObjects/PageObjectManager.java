@@ -13,7 +13,7 @@ public class PageObjectManager {
 	public VBankConsentConfiguration vBankConsentConfiguration;
 	public VBankPublishApp vBankPublishApp;
 	public VHubExploreUseCasesSD vHubExploreUseCases;
-	public VHubAccountDetails vHubAccountDetails;
+	public VHubDashboard vHubAccountDetails;
 	public VHubMySubscriptions vHubMySubscriptions;
 	public APIAssetDetailPage apiAssetDetailPage;
 	public VHubFooter vHubFooter;
@@ -55,8 +55,8 @@ public class PageObjectManager {
 		return vBankPublishApp;
 	}
 
-	public VHubAccountDetails getVHubAccountDetails() {
-		vHubAccountDetails = new VHubAccountDetails(driver);
+	public VHubDashboard getVHubAccountDetails() {
+		vHubAccountDetails = new VHubDashboard(driver);
 		return vHubAccountDetails;
 	}
 

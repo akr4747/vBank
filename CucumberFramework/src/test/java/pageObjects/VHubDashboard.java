@@ -8,13 +8,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class VHubAccountDetails {
+public class VHubDashboard {
 	
 	
 	public WebDriver driver;
 	public WebDriverWait wait;
 
-	public VHubAccountDetails(WebDriver driver) {
+	public VHubDashboard(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));

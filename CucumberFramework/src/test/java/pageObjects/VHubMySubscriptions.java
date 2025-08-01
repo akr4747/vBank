@@ -1,5 +1,9 @@
 package pageObjects;
 
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.time.Duration;
 import java.util.List;
 
@@ -201,6 +205,28 @@ public class VHubMySubscriptions {
 
 	@FindBy(xpath = "(//button//span[@class='mdc-button__label'])[2]")
 	private WebElement deprecateRequestUnsubscribeSubmitRequest;
+	
+	public static void uploadFile(String fileLocation) {
+		try {
+
+			setClipboardData(fileLocation);
+			Robot robot = new Robot();
+			robot.keyPress(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_V);
+			robot.keyRelease(KeyEvent.VK_V);
+			robot.keyRelease(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		} catch (Exception exp) {
+			exp.printStackTrace();
+		}
+	}
+
+	public static void setClipboardData(String string) {
+
+		StringSelection stringSelection = new StringSelection(string);
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
+	}
 
 	// Service Up View Details
 	public void clickOnServiceUpViewDetails() {
@@ -209,7 +235,6 @@ public class VHubMySubscriptions {
 
 		try {
 			boolean explorePresent = false;
-
 			try {
 				explorePresent = isElementVisible(exploreAssets, shortWait);
 			} catch (Exception e) {
@@ -357,6 +382,12 @@ public class VHubMySubscriptions {
 
 				wait.until(ExpectedConditions.visibilityOf(seriveUpRequestSupportSubject)).sendKeys(subject);
 				wait.until(ExpectedConditions.visibilityOf(seriveUpRequestSupportDescription)).sendKeys(Description);
+				
+				seriveUpRequestSupportFileUpload.click();
+				genericUtils.waitForDOMToStabilize(2);
+				uploadFile(System.getProperty("user.dir") + "\\src\\test\\resources\\File.pdf");
+				genericUtils.waitForDOMToStabilize(2);
+				
 				wait.until(ExpectedConditions.elementToBeClickable(seriveUpRequestSupportSubmitRequest)).click();
 
 				WebElement submittedPopup = shortWait
@@ -701,6 +732,12 @@ public class VHubMySubscriptions {
 
 				wait.until(ExpectedConditions.visibilityOf(seriveDownRequestSupportSubject)).sendKeys(subject);
 				wait.until(ExpectedConditions.visibilityOf(seriveDownRequestSupportDescription)).sendKeys(Description);
+				
+				seriveDownRequestSupportFileUpload.click();
+				genericUtils.waitForDOMToStabilize(2);
+				uploadFile(System.getProperty("user.dir") + "\\src\\test\\resources\\File.pdf");
+				genericUtils.waitForDOMToStabilize(2);	
+				
 				wait.until(ExpectedConditions.elementToBeClickable(seriveDownRequestSupportSubmitRequest)).click();
 
 				WebElement submittedPopup = shortWait
@@ -1133,6 +1170,12 @@ public class VHubMySubscriptions {
 				wait.until(ExpectedConditions.visibilityOf(creditExpiredRequestSupportSubject)).sendKeys(subject);
 				wait.until(ExpectedConditions.visibilityOf(creditExpiredRequestSupportDescription))
 						.sendKeys(Description);
+				
+				creditExpiredRequestSupportFileUpload.click();
+				genericUtils.waitForDOMToStabilize(2);
+				uploadFile(System.getProperty("user.dir") + "\\src\\test\\resources\\File.pdf");
+				genericUtils.waitForDOMToStabilize(2);
+				
 				wait.until(ExpectedConditions.elementToBeClickable(creditExpiredRequestSupportSubmitRequest)).click();
 
 				WebElement submittedPopup = shortWait
@@ -1475,6 +1518,12 @@ public class VHubMySubscriptions {
 
 				wait.until(ExpectedConditions.visibilityOf(deprecateRequestSupportSubject)).sendKeys(subject);
 				wait.until(ExpectedConditions.visibilityOf(deprecateRequestSupportDescription)).sendKeys(Description);
+				
+				deprecateRequestSupportFileUpload.click();
+				genericUtils.waitForDOMToStabilize(2);
+				uploadFile(System.getProperty("user.dir") + "\\src\\test\\resources\\File.pdf");
+				genericUtils.waitForDOMToStabilize(2);
+				
 				wait.until(ExpectedConditions.elementToBeClickable(deprecateRequestSupportSubmitRequest)).click();
 
 				WebElement submittedPopup = shortWait
